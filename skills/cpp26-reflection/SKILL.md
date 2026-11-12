@@ -106,10 +106,12 @@ Use `unchecked()` deliberately, for example in a serializer that must see privat
 ## Queries and their traps
 
 - `members_of` returns everything: data members, member functions, nested types, static members, and the implicitly declared constructors, destructor and assignment operators. For data, use `nonstatic_data_members_of`. For functions, filter with `is_function(m)` and exclude `is_special_member_function(m)`, `is_constructor(m)`, `is_destructor(m)` and `is_operator_function(m)` as needed.
+- Class members, bases and enumerators come in declaration order. Namespace members from `members_of(^^ns, ctx)` come in no fixed order; sort them, for example by `identifier_of`, when order matters.
 - `identifier_of(r)` fails at compile time unless `has_identifier(r)`. Fundamental types (`^^int`), cv-qualified types, template specializations (`^^std::vector<int>`), constructors, operators and unnamed entities have no identifier.
 - `display_string_of(r)` text is implementation-defined. Use it only for human-readable messages, never for keys, tests or serialization.
 - `type_of(r)` takes an entity with a type (variable, data member, function, parameter, enumerator, base, annotation, value). It does not take a type.
 - `^^Alias` reflects the alias, not the aliased type: `^^MyInt != ^^int`. Standard names such as `std::string` and `std::size_t` are aliases too, so `type_of(m) == ^^std::string` is false for a `std::string` member. Use `dealias(r)` on both sides, or `is_same_type`, before comparing types or calling `template_arguments_of`.
+- `^^` cannot reflect a name introduced by a using-declaration. The standard library may declare C names such as `std::uint32_t` or `std::int8_t` that way, so `^^std::uint32_t` is not portable. Go through a template instead: `template <class T> constexpr std::meta::info type = ^^T;` then `type<std::uint32_t>`.
 - Compare reflections with `==` and `!=`. They have no `<`. To order types, use `std::meta::type_order(a, b)`.
 - `^^T && x` reflects the type `T&&`, so `r == ^^T && ok` does not compile. Write `(^^T)` when `&&` or `&` follows.
 - A class is incomplete inside its own definition, so member queries on it fail there, for example in a `static_assert` in the class body. Query from outside the class, or from a member function body, where the class is complete.

@@ -421,7 +421,7 @@ public:
 
 ### Static storage
 
-- `std::define_static_array(r)` returns `std::span<const T>` over a static copy of the range. It is the usual way to iterate query results in `template for`, or to keep them in a `constexpr` variable.
+- `std::define_static_array(r)` returns `std::span<const T>` over a static copy of the range. It is the usual way to iterate query results in `template for`, or to keep them in a `constexpr` variable. `T` must be a structural type, so `std::string_view` and `std::string` elements do not work; use `const char*` from `define_static_string`.
 - `std::define_static_string(r)` returns a null-terminated `const char*` in static storage. The pointer is usable in structural values, annotations and template arguments.
 - `std::define_static_object(v)` returns a pointer to a static copy of a structural object.
 - `reflect_constant_string` and `reflect_constant_array` return a reflection of such an array instead of a pointer.

@@ -56,8 +56,10 @@ Every function in `std::meta` is `consteval`. A reflection value cannot reach ru
 5. A parameter of a `consteval` function is not a constant expression either. To splice a reflection inside a function, take it as a template parameter: `template <std::meta::info R> auto get(auto& obj) { return obj.[:R:]; }`.
 6. Make a non-template function that returns or takes `std::meta::info` `consteval`. In a `constexpr` function template, a `std::meta` call outside a constant context makes that specialization `consteval`, so it can no longer be called at run time. Put such calls in `constexpr` variables, `template for` headers or `if constexpr` conditions.
 7. A runtime `if` or `?:` does not stop a `consteval` call in the other branch from being evaluated. Guard with `if constexpr` on a `constexpr bool`, inside a template or `template for` body.
-8. If you name the static array before the loop, make it `static constexpr`: `static constexpr auto members = std::define_static_array(...);`.
+8. If you name the static array before the loop, make it `static constexpr`: `static constexpr auto members = std::define_static_array(...);`. A plain `constexpr` local is not enough: `template for` binds a reference to it, and a reference to a local is not a constant expression.
+   The elements of `define_static_array` must be structural too. A vector of `std::string_view`, or of a struct holding a `std::string_view` or `std::string`, does not work: store `const char*` from `std::define_static_string` instead, as in `struct row { const char* name; int n; };`.
 9. A class with a `std::meta::info` member, or a span or array of them, is consteval-only too. Even reading its plain fields at run time is ill-formed: copy them first, `constexpr int begin = part.begin;`, then use `begin`.
+10. `std::to_string` is not usable at compile time. To build text with numbers in `consteval` code, use `std::to_chars` into a `char` buffer, then append.
 
 ## Splices
 
@@ -67,7 +69,9 @@ Every function in `std::meta` is `consteval`. A reflection value cannot reach ru
 | `obj.[: m :]`, `ptr->[: m :]` | a member access |
 | `typename [: r :]` | a type. Write `typename` everywhere except where only a type can appear (after `using X =`, in a base-specifier) |
 | `template [: r :]<args>` | a template specialization or call |
-| `([: r :])` | a splice used as a template argument, e.g. `std::array<int, ([:r:])>` |
+| `([: r :])` | a value splice used as a template argument, e.g. `std::array<int, ([:r:])>` |
+
+A type splice inside a template argument list needs `typename`: `std::remove_cvref_t<typename [: std::meta::type_of(m) :]>`. A bare `[: ... :]` there does not compile.
 
 `^^` takes a name or a type, not an arbitrary expression: `^^x`, `^^S::m`, `^^int`, `^^std::vector`, `^^ns`, `^^::`. To reflect the value of an expression, use `std::meta::reflect_constant(expr)`.
 
@@ -176,7 +180,7 @@ int main() {}
 
 - Call it inside a `consteval { }` block, at namespace or class scope.
 - The class must be declared but not yet defined.
-- Every member spec needs a name: `std::meta::data_member_spec(^^int, {.name = "x"})`. Options also include `.alignment`, `.bit_width` and `.no_unique_address`.
+- Give each member spec a name: `std::meta::data_member_spec(^^int, {.name = "x"})`. Options also include `.alignment`, `.bit_width` and `.no_unique_address`. Only a bit-field may leave out the name, `{.bit_width = 4}`, which makes padding bits. Unnamed bit-fields are not listed by `nonstatic_data_members_of`.
 - It only adds data members. C++26 cannot generate member functions, enumerators or arbitrary declarations.
 
 For a type generated from a template parameter, declare a nested class in a class template and define it in a `consteval` block inside that template. See the struct-of-arrays recipe in [references/recipes.md](references/recipes.md).

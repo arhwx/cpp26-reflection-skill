@@ -16,29 +16,32 @@ for (auto a : std::meta::annotations_of(m))
 
 ## Results
 
-There are 32 tasks, listed in [evals/README.md](evals/README.md), each tried once per model. The last 9 are harder: generated types, constructor and parameter reflection, type substitution and format strings checked at compile time. Models wrote each header in one pass and were not allowed to compile anything. A task passes when the header builds with GCC 16 and the test program prints the expected output.
+There are 89 tasks, listed in [evals/README.md](evals/README.md), from enum names up to generated types, compile-time parsers, coroutines and checks that turn into build errors. Each model tried each task once, wrote the header in one pass and was not allowed to compile anything. A task passes when the header builds with GCC 16 and the test program prints the expected output.
 
 | Model | Without skill | With skill |
 |---|---|---|
-| Claude Opus 5.5 | 31/32 | 32/32 |
-| Claude Fable 5.2 | 32/32 | 31/32 |
-| GPT-6.1 Sol | 20/32 | 32/32 |
-| GPT-6 Astra | 27/32 | 32/32 |
-| **Total** | **110/128 (86%)** | **127/128 (99%)** |
+| Claude Opus 5.5 | 80/89 | 87/89 |
+| Claude Fable 5.2 | 83/89 | 87/89 |
+| GPT-6 Astra | 60/89 | 84/89 |
+| Claude Sonnet 5.5 | 64/89 | 78/89 |
+| GPT-6.1 Sol | 34/89 | 78/89 |
+| Claude Haiku 5.5 | 5/89 | 54/89 |
+| **Total** | **326/534 (61%)** | **468/534 (88%)** |
 
-On the 16 holdout tasks, which have no matching example in the skill, the totals are 52/64 without and 63/64 with.
+On the 73 holdout tasks, which have no matching example in the skill, the totals are 252/438 (58%) without and 373/438 (85%) with.
 
-Claude Opus 5.5 and Fable 5.2 already handle these tasks well; the skill helps most with models that do not. On the 9 harder tasks, GPT-6.1 Sol went from 3/9 to 9/9.
+The skill helps most where a model knows reflection least: Haiku 5.5 went from 5 to 54 and GPT-6.1 Sol from 34 to 78. Opus and Fable already solve most tasks, and the skill closes most of the rest.
 
 Common failures without the skill:
 
-- annotation values that are not structural types, such as `std::string_view` or a pointer to a string literal
-- a splice used as a template argument without `typename`
+- `^^std::uint32_t` and other `<cstdint>` names, which are using-declarations and cannot be reflected
+- a `define_static_array` result kept in a plain `constexpr` local and then used in `template for`
+- a type splice used as a template argument without `typename`
 - reflection values reaching code that runs at run time
-- `define_aggregate` called outside a `consteval` block
+- annotation values or static arrays of types that are not structural, such as `std::string_view`
 - comparing an annotation's type without removing `const`, which compiles and prints the wrong result
 
-Each model made one attempt per task, so a difference of one task is within noise.
+Each model made one attempt per task, so a difference of a task or two is within noise.
 
 ## Examples
 

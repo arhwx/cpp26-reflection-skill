@@ -57,6 +57,7 @@ Every function in `std::meta` is `consteval`. A reflection value cannot reach ru
 6. Make a non-template function that returns or takes `std::meta::info` `consteval`. In a `constexpr` function template, a `std::meta` call outside a constant context makes that specialization `consteval`, so it can no longer be called at run time. Put such calls in `constexpr` variables, `template for` headers or `if constexpr` conditions.
 7. A runtime `if` or `?:` does not stop a `consteval` call in the other branch from being evaluated. Guard with `if constexpr` on a `constexpr bool`, inside a template or `template for` body.
 8. If you name the static array before the loop, make it `static constexpr`: `static constexpr auto members = std::define_static_array(...);`.
+9. A class with a `std::meta::info` member, or a span or array of them, is consteval-only too. Even reading its plain fields at run time is ill-formed: copy them first, `constexpr int begin = part.begin;`, then use `begin`.
 
 ## Splices
 
@@ -110,7 +111,7 @@ Use `unchecked()` deliberately, for example in a serializer that must see privat
 - `identifier_of(r)` fails at compile time unless `has_identifier(r)`. Fundamental types (`^^int`), cv-qualified types, template specializations (`^^std::vector<int>`), constructors, operators and unnamed entities have no identifier.
 - `display_string_of(r)` text is implementation-defined. Use it only for human-readable messages, never for keys, tests or serialization.
 - `type_of(r)` takes an entity with a type (variable, data member, function, parameter, enumerator, base, annotation, value). It does not take a type.
-- `^^Alias` reflects the alias, not the aliased type: `^^MyInt != ^^int`. Use `dealias(r)` before comparing types or calling `template_arguments_of`.
+- `^^Alias` reflects the alias, not the aliased type: `^^MyInt != ^^int`. Standard names such as `std::string` and `std::size_t` are aliases too, so `type_of(m) == ^^std::string` is false for a `std::string` member. Use `dealias(r)` on both sides, or `is_same_type`, before comparing types or calling `template_arguments_of`.
 - Compare reflections with `==` and `!=`. They have no `<`. To order types, use `std::meta::type_order(a, b)`.
 - A class is incomplete inside its own definition, so member queries on it fail there, for example in a `static_assert` in the class body. Query from outside the class, or from a member function body, where the class is complete.
 - `bases_of(^^T, ctx)` returns base relationships. Use `type_of(b)` for the base type. To reach the base subobject, cast: `using Base = [:std::meta::type_of(b):]; const Base& base = obj;`. The splice `obj.[:b:]` is also standard.

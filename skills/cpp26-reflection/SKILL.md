@@ -69,8 +69,6 @@ Every function in `std::meta` is `consteval`. A reflection value cannot reach ru
 | `template [: r :]<args>` | a template specialization or call |
 | `([: r :])` | a splice used as a template argument, e.g. `std::array<int, ([:r:])>` |
 
-`^^T && x` parses as `^^(T&&) x`. Write `(^^T) && x`.
-
 `^^` takes a name or a type, not an arbitrary expression: `^^x`, `^^S::m`, `^^int`, `^^std::vector`, `^^ns`, `^^::`. To reflect the value of an expression, use `std::meta::reflect_constant(expr)`.
 
 You cannot reflect an overload set (`^^f` where `f` is overloaded) or a using-declarator. Reflect a specific declaration, or select a member from `members_of` by type or parameters.
@@ -113,6 +111,7 @@ Use `unchecked()` deliberately, for example in a serializer that must see privat
 - `type_of(r)` takes an entity with a type (variable, data member, function, parameter, enumerator, base, annotation, value). It does not take a type.
 - `^^Alias` reflects the alias, not the aliased type: `^^MyInt != ^^int`. Standard names such as `std::string` and `std::size_t` are aliases too, so `type_of(m) == ^^std::string` is false for a `std::string` member. Use `dealias(r)` on both sides, or `is_same_type`, before comparing types or calling `template_arguments_of`.
 - Compare reflections with `==` and `!=`. They have no `<`. To order types, use `std::meta::type_order(a, b)`.
+- `^^T && x` reflects the type `T&&`, so `r == ^^T && ok` does not compile. Write `(^^T)` when `&&` or `&` follows.
 - A class is incomplete inside its own definition, so member queries on it fail there, for example in a `static_assert` in the class body. Query from outside the class, or from a member function body, where the class is complete.
 - `bases_of(^^T, ctx)` returns base relationships. Use `type_of(b)` for the base type. To reach the base subobject, cast: `using Base = [:std::meta::type_of(b):]; const Base& base = obj;`. The splice `obj.[:b:]` is also standard.
 - Type properties use names ending in `_type`: `is_class_type`, `is_enum_type`, `is_same_type`, `remove_cvref`, `is_integral_type`. Never `type_is_class` or `test_trait`.

@@ -1,0 +1,6 @@
+title = "Dependency injector from constructor parameters"
+needs = ["members_of", "access_context", "is_constructor", "is_copy_constructor", "is_move_constructor", "parameters_of", "type_of", "define_static_array", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

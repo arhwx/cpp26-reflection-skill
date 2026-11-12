@@ -1,0 +1,18 @@
+[Ann is 31 years]
+[Ann and Ann]
+[Ann31Oslo]
+[{Ann}]
+[{name} = Ann, a}b]
+[#-7 from Oslo]
+[31]
+[no fields]
+[]
+[Rex has 4 legs]
+[12 boxes, 3 left]
+[Bob: account 42 in EUR]
+valid field: true
+unknown field: false
+vector field: false
+private field: false
+unmatched open brace: false
+stray close brace: false

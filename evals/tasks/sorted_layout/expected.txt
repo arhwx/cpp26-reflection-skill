@@ -1,0 +1,7 @@
+Record: pos score name id count port kind color active
+Sample: temp pressure humidity voltage id count seq errors gain raw0 raw1 raw2 raw3 unit flag valid mode zone
+Empty:
+not larger: true
+4 2.5 node 7000000000 42 8080 k 3 true
+e -1.5 9 22 edge false 0.5 3 -9
+C 21.5 1 10 1013.25 f 5 11 40.5 true 77 12 3.25 m 0 13 0.75 z

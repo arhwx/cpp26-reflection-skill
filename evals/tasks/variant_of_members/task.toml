@@ -1,0 +1,6 @@
+title = "Variant of distinct member types and lookup by name"
+needs = ["nonstatic_data_members_of", "access_context", "type_of", "remove_cv", "substitute", "identifier_of", "define_static_array", "template for", "splice", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

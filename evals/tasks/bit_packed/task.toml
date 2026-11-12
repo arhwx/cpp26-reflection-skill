@@ -1,0 +1,6 @@
+title = "Generated bit-field struct from width annotations"
+needs = ["annotations", "annotations_of", "extract", "define_aggregate", "data_member_spec", "bit_width", "is_bit_field", "bit_size_of", "nonstatic_data_members_of", "access_context", "identifier_of", "define_static_array", "template for", "splice"]
+fork_ok = false
+fork_note = "the fork's data_member_options has no bit_width member, only the pre-standard width"
+cxx20_fallback = false
+holdout = true

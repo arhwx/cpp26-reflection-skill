@@ -1,0 +1,25 @@
+no differences
+--
+origin.y: 0 -> 5
+corners[1].x: 3 -> 30
+corners[2].y: 6 -> -6
+grid[1][0]: 3 -> 9
+tags[1]: "big" -> "small"
+style.pen.color: "black" -> "blue"
+style.filled: true -> false
+style.opacity: 0.5 -> 0.25
+version: 1 -> 2
+--
+id: "s1" -> "s2"
+style.pen.width: 1.5 -> 2
+--
+teams[0].name: "ants" -> "wasps"
+teams[1].scores[2]: 6 -> 7
+round: 1 -> 2
+--
+teams[0].name: "wasps" -> "ants"
+teams[1].scores[2]: 7 -> 6
+round: 2 -> 1
+--
+x: 1 -> -1
+--

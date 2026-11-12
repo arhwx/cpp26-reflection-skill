@@ -1,0 +1,6 @@
+title = "Replace a type inside template arguments, pointers and const"
+needs = ["has_template_arguments", "template_of", "template_arguments_of", "substitute", "is_type", "dealias", "is_const_type", "is_pointer_type", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

@@ -1,0 +1,18 @@
+sum 4.75
+scaled 9.5
+double:
+  mass = 5
+  height = 3.5
+  width = 1
+int:
+  id = 7
+  count = 12
+const double:
+  density = 4
+string:
+  name = probe
+float:
+account 120.5 379
+account int:
+  rank = 1
+empty 0

@@ -1,0 +1,4 @@
+packed version=5 length=1500 stamp=1000000000000 crc=48879
+version=5 urgent=true length=1500 channel=9 stamp=1000000000000 legacy=17 crc=48879 tag=ok weight=0.5
+version=1 urgent=false length=904 channel=15 stamp=100488372224 legacy=31 crc=70000 tag=big weight=-2
+version=7 urgent=true length=4095 channel=15 stamp=1099511627775 legacy=31 crc=1 tag=max weight=1.5

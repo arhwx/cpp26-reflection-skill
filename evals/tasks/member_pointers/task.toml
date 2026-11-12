@@ -1,0 +1,6 @@
+title = "Constexpr member pointer tables by member type"
+needs = ["nonstatic_data_members_of", "access_context", "type_of", "is_bit_field", "extract", "identifier_of", "define_static_array"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

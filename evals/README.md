@@ -8,14 +8,19 @@ We then compile it against a fixed test driver, run it on two toolchains, compar
 
 | task | what it tests | holdout |
 |---|---|---|
+| `bit_packed` | Generated bit-field struct from width annotations, with masking pack and unpack | yes |
 | `call_by_name` | Call a member function chosen by name | yes |
 | `cli_parse` | Command line parser from an options struct | no |
 | `compare_hash` | Memberwise equality and hash | no |
+| `di_container` | Dependency injector that builds objects from their constructor parameters | yes |
 | `enum_names` | Enum to string and back | no |
 | `enum_values` | Enumerator count, values and index with duplicate values | no |
 | `field_names` | Constexpr array of field names | no |
 | `flag_names` | Bit-flag enum to string, replacing X-macros | no |
+| `format_fields` | Format string whose field placeholders are checked at compile time in the function's constraints | yes |
 | `json_annotations` | JSON writer with rename and skip annotations | no |
+| `member_pointers` | Constexpr member pointer and name tables for members of a given type | yes |
+| `named_call` | Call a free function with string arguments given by parameter name, using default arguments | yes |
 | `ns_dispatch` | Call a namespace function by name | yes |
 | `offsets` | Constexpr member offset table | yes |
 | `optional_patch` | Generated patch struct of optional members | no |
@@ -24,12 +29,16 @@ We then compile it against a fixed test driver, run it on two toolchains, compar
 | `private_fields` | Field count with private members, public field names | yes |
 | `qualified_name` | Fully qualified name of a namespace-scope entity | yes |
 | `range_check` | Range validation from annotations | yes |
+| `replace_type` | Replace a type inside template arguments, pointers and const | yes |
 | `route_table` | Call member functions by route annotation | yes |
 | `soa_columns` | Generated struct of arrays | no |
+| `sorted_layout` | Generated struct with members sorted by alignment, ties in declaration order | no |
+| `struct_diff` | Recursive diff of nested structs and C arrays with member paths | no |
 | `struct_print` | Recursive struct printer | no |
 | `to_tuple` | Struct to tuple | yes |
 | `type_filter` | Filter tuple element types | no |
 | `type_names` | Compiler-independent type names, including template specializations | yes |
+| `variant_of_members` | Variant of distinct member types and member lookup by name | yes |
 | `with_bases` | Struct printer including base classes | no |
 
 Each task directory has:
@@ -46,6 +55,8 @@ Holdout tasks have no matching example in the skill. They show whether the skill
 ## Toolchains
 
 - GCC 16: `g++ -std=c++26 -freflection`. This is the primary grader.
+  GCC 16's libstdc++ rejects `std::array<std::meta::info, 0>`: the empty helper's `operator[]` lacks `constexpr`, which is ill-formed for a consteval-only type.
+  The grader compiles against a copy of `<array>` with that one `constexpr` added, so the library bug does not fail correct solutions.
 - The clang-p2996 fork, run in Docker: `clang++ -std=c++26 -freflection-latest -stdlib=libc++`.
   The image is pinned in `grade.py`; set `FORK_IMAGE` to use another one.
   It lacks some standard features, so tasks that need them set `fork_ok = false` and give the reason in `fork_note`.

@@ -5,6 +5,7 @@ usage: grade.py <solutions_dir> [--json out.json] [--tasks a,b] [--no-fork]
 """
 
 import argparse
+import atexit
 import json
 import os
 import re
@@ -330,6 +331,25 @@ def grade(task, sol_dir, use_fork):
     return r
 
 
+# libstdc++ in GCC 16 declares the operator[] of the empty helper behind std::array<T, 0>
+# without constexpr, which is ill-formed when T is consteval-only (std::meta::info).
+# grade against a copy of <array> with constexpr added, so this library bug does not
+# fail standard-correct solutions
+ARRAY_BUG = "       _Tp& operator[](size_t) const noexcept { __builtin_trap(); }"
+
+
+def array_fix_flags():
+    deps = subprocess.run([*GCC, "-x", "c++", "-M", "-"], input="#include <array>\n",
+                          capture_output=True, text=True).stdout
+    header = next((Path(p) for p in deps.replace("\\\n", " ").split() if p.endswith("/array")), None)
+    if header is None or ARRAY_BUG not in header.read_text():
+        return []
+    fix = Path(tempfile.mkdtemp(prefix="grade-fix-"))
+    (fix / "array").write_text(header.read_text().replace(ARRAY_BUG, "       constexpr" + ARRAY_BUG[6:]))
+    atexit.register(shutil.rmtree, fix, True)
+    return ["-I", str(fix)]
+
+
 def passed_gcc(r):
     return r["gcc"] == "pass" and r["cxx20"] in ("", "pass")
 
@@ -352,6 +372,7 @@ def main():
     only = [t for t in args.tasks.split(",") if t] if args.tasks else None
     tasks = load_tasks(only)
     use_fork = not args.no_fork
+    GCC.extend(array_fix_flags())
 
     with ThreadPoolExecutor(JOBS) as pool:
         results = list(pool.map(lambda t: grade(t, args.solutions_dir, use_fork), tasks))

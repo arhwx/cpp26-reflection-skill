@@ -1,0 +1,34 @@
+get App
+  create Logger
+  create Repo
+  create Service
+  create App
+get App again
+same App: true
+App and Service share Repo: true
+Repo and Service share Logger: true
+get Logger is shared: true
+get Mailer
+  create Config
+  create Mailer
+Mailer port: 8080
+Mailer shares Logger: true
+get Cache
+  create Cache
+Cache sees ticks: 5
+destroy injector
+  destroy Cache
+  destroy Mailer
+  destroy Config
+  destroy App
+  destroy Service
+  destroy Repo
+  destroy Logger
+get Mailer from a new injector
+  create Config
+  create Logger
+  create Mailer
+destroy injector
+  destroy Mailer
+  destroy Logger
+  destroy Config

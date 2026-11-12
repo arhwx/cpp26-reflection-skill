@@ -1,0 +1,21 @@
+id: 1 (alternative 0)
+value: 21.5 (alternative 1)
+unit: C (alternative 2)
+count: 4 (alternative 0)
+version: 3 (alternative 0)
+limit: 30 (alternative 1)
+valid: true (alternative 3)
+source: lab (alternative 2)
+total: missing
+Id: missing
+: missing
+name: probe (alternative 0)
+ticks: 1200 (alternative 1)
+grade: B (alternative 2)
+offset_: missing
+calibrated: missing
+calibrated 0.75
+hidden false 7
+empty false
+unit is string true
+version 4

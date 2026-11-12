@@ -1,0 +1,26 @@
+add: [5]
+divide: [5]
+divide negative: [-3]
+add missing: nullopt
+add unknown: nullopt
+add bad int: nullopt
+add empty int: nullopt
+greet: [ann]
+greet times: [ann ann ann]
+greet all: [ann ann!]
+greet false: [bo]
+greet gap: nullopt
+greet bad bool: nullopt
+greet no name: nullopt
+greet empty name: []
+scale: [5]
+scale factor: [4.5]
+scale bad: nullopt
+counter: [1001]
+counter start: [701]
+counter step: nullopt
+counter both: [705]
+answer: [42]
+answer extra: nullopt
+legacy: [42]
+legacy missing: nullopt

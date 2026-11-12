@@ -1,0 +1,37 @@
+{
+  "name": "cpp26-reflection",
+  "version": "1.0.0",
+  "description": "Teaches coding agents to write standard C++26 static reflection code that compiles: ^^, splices, template for, annotations, define_aggregate.",
+  "author": {
+    "name": "arhwx",
+    "url": "https://github.com/arhwx"
+  },
+  "homepage": "https://github.com/arhwx/cpp26-reflection-skill",
+  "repository": "https://github.com/arhwx/cpp26-reflection-skill",
+  "license": "MIT",
+  "keywords": [
+    "c++",
+    "cpp",
+    "c++26",
+    "reflection",
+    "metaprogramming",
+    "skills"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "C++26 Reflection",
+    "shortDescription": "Write C++26 static reflection code that compiles",
+    "longDescription": "Rules, recipes and the full <meta> API for standard C++26 reflection: member and enumerator iteration, splices, template for, access contexts, annotations, define_aggregate, and migration from magic_enum, Boost.PFR, Boost.Describe and X-macros.",
+    "developerName": "arhwx",
+    "category": "Developer Tools",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "defaultPrompt": [
+      "Write an enum to string function with C++26 reflection",
+      "Replace this X-macro with C++26 reflection"
+    ],
+    "websiteURL": "https://github.com/arhwx/cpp26-reflection-skill"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "name": "cpp26-reflection-skill",
+  "interface": {
+    "displayName": "C++26 Reflection"
+  },
+  "plugins": [
+    {
+      "name": "cpp26-reflection",
+      "version": "1.0.0",
+      "description": "Teaches coding agents to write standard C++26 static reflection code that compiles: ^^, splices, template for, annotations, define_aggregate.",
+      "source": {
+        "source": "local",
+        "path": "./"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Developer Tools"
+    }
+  ]
+}

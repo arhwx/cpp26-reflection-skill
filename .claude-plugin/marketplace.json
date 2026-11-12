@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "cpp26-reflection-skill",
+  "description": "Teaches coding agents to write standard C++26 static reflection code that compiles: ^^, splices, template for, annotations, define_aggregate.",
+  "owner": {
+    "name": "arhwx",
+    "url": "https://github.com/arhwx"
+  },
+  "plugins": [
+    {
+      "name": "cpp26-reflection",
+      "description": "Teaches coding agents to write standard C++26 static reflection code that compiles: ^^, splices, template for, annotations, define_aggregate.",
+      "version": "1.0.0",
+      "source": "./",
+      "author": {
+        "name": "arhwx",
+        "url": "https://github.com/arhwx"
+      },
+      "homepage": "https://github.com/arhwx/cpp26-reflection-skill",
+      "license": "MIT",
+      "keywords": [
+        "c++",
+        "cpp",
+        "c++26",
+        "reflection",
+        "metaprogramming",
+        "skills"
+      ],
+      "category": "development"
+    }
+  ]
+}

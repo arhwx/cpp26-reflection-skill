@@ -1,0 +1,6 @@
+title = "Fully qualified name of a namespace-scope entity"
+needs = ["parent_of", "identifier_of", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

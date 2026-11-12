@@ -1,0 +1,6 @@
+title = "Range validation from annotations"
+needs = ["nonstatic_data_members_of", "access_context", "annotations_of", "extract", "identifier_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

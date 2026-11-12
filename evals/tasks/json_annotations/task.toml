@@ -1,0 +1,6 @@
+title = "JSON writer with rename and skip annotations"
+needs = ["annotations", "annotations_of", "define_static_string", "extract", "nonstatic_data_members_of", "access_context", "identifier_of", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = false

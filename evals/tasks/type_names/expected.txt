@@ -1,0 +1,24 @@
+int
+unsigned
+long
+bool
+char
+double
+Point
+Color
+Inner
+Vec
+Box<Point>
+Pair<int, Box<double>>
+Box<int>
+unsigned
+Box<unsigned>
+Box<char>
+Pair<long, Vec>
+Pair<Pair<long, Vec>, unsigned>
+Grid<Box<int>>
+Tuple<>
+Tuple<char, Color, Tuple<bool>>
+Tag<-3>
+Fixed<Box<long>, 4>
+Box<Fixed<Inner, 2>>

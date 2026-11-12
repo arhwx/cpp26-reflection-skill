@@ -1,0 +1,6 @@
+title = "Struct printer including base classes"
+needs = ["bases_of", "nonstatic_data_members_of", "access_context", "identifier_of", "template for", "splice", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = false

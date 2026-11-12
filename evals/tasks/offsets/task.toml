@@ -1,0 +1,6 @@
+title = "Constexpr member offset table"
+needs = ["nonstatic_data_members_of", "access_context", "identifier_of", "offset_of", "size_of", "define_static_array", "template for"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

@@ -1,0 +1,6 @@
+title = "Call a namespace function by name"
+needs = ["members_of", "access_context", "parameters_of", "identifier_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

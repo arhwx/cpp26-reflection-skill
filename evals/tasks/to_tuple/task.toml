@@ -1,0 +1,6 @@
+title = "Struct to tuple"
+needs = ["nonstatic_data_members_of", "access_context", "substitute", "define_static_array", "splice", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

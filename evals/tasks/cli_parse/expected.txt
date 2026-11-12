@@ -1,0 +1,9 @@
+port=80 verbose=false host=localhost retries=3 dry_run=false
+port=8080 verbose=true host=example.org retries=3 dry_run=false
+port=80 verbose=false host=localhost retries=-1 dry_run=true
+port=1 verbose=true host= retries=3 dry_run=false
+error
+error
+error
+error
+error

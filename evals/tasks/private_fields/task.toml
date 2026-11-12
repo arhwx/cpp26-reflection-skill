@@ -1,0 +1,6 @@
+title = "Field count with private members, public field names"
+needs = ["nonstatic_data_members_of", "access_context", "identifier_of", "template for"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

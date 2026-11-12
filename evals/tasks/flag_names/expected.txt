@@ -1,0 +1,10 @@
+0 -> none
+1 -> read
+3 -> read|write
+5 -> read|exec
+15 -> read|write|exec|admin
+8 -> admin
+33 -> read
+read|write|exec|admin
+fast|debug
+none

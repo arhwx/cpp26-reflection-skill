@@ -1,0 +1,6 @@
+title = "Generated patch struct of optional members"
+needs = ["define_aggregate", "data_member_spec", "substitute", "nonstatic_data_members_of", "access_context", "identifier_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = false

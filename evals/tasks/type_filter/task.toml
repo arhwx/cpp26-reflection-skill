@@ -1,0 +1,6 @@
+title = "Filter tuple element types"
+needs = ["template_arguments_of", "substitute", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = false

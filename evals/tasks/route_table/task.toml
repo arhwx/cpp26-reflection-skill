@@ -1,0 +1,6 @@
+title = "Call member functions by route annotation"
+needs = ["annotations", "annotations_of", "define_static_string", "extract", "members_of", "access_context", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

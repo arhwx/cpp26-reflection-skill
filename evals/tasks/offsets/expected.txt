@@ -1,0 +1,8 @@
+kind        0   1
+length      4   4
+flags       8   2
+stamp      16   8
+tag        24   6
+checksum   32   8
+a           0   2
+b           2   2

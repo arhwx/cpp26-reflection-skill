@@ -1,0 +1,6 @@
+title = "Call a member function chosen by name"
+needs = ["members_of", "access_context", "has_identifier", "identifier_of", "parameters_of", "return_type_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

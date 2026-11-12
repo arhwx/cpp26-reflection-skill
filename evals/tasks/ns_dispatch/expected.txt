@@ -1,0 +1,9 @@
+add -> 5
+mul -> 20
+neg -> -7
+add -> nullopt
+neg -> nullopt
+mul -> nullopt
+sub -> nullopt
+commands -> nullopt
+fixed -> -42

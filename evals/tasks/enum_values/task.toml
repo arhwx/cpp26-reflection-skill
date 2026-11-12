@@ -1,0 +1,6 @@
+title = "Enumerator count, values and index"
+needs = ["enumerators_of", "extract", "define_static_array"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = false

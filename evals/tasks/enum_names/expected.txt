@@ -1,0 +1,14 @@
+0 -> [ok]
+2 -> [warn]
+3 -> []
+5 -> [error]
+-1 -> [fatal]
+green second udp
+[]
+[warn] -> 2
+[fatal] -> -1
+[ok] -> 0
+[Warn] -> nullopt
+[unknown] -> nullopt
+[] -> nullopt
+tcp -> 6

@@ -1,0 +1,6 @@
+title = "Compiler-independent type names"
+needs = ["template_of", "template_arguments_of", "has_template_arguments", "dealias", "identifier_of", "extract", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

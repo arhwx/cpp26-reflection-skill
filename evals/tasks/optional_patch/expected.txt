@@ -1,0 +1,7 @@
+localhost:8080 verbose=false timeout=1.5 retries=2
+engaged false false false false false
+localhost:9000 verbose=false timeout=1.5 retries=2
+example.org:9000 verbose=true timeout=1.5 retries=0
+example.org:9000 verbose=true timeout=1.5 retries=0
+1 -7
+3 -7

@@ -1,0 +1,8 @@
+port
+host
+verbose
+timeout
+read
+write
+mode
+0

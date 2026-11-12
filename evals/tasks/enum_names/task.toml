@@ -1,0 +1,6 @@
+title = "Enum to string and back"
+needs = ["enumerators_of", "identifier_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = false

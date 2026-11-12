@@ -1,0 +1,6 @@
+title = "Function signature with parameter names"
+needs = ["parameters_of", "has_identifier", "identifier_of", "define_static_array", "template for"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = false

@@ -1,0 +1,6 @@
+title = "Config struct generated from a sample INI text, with a checked reader and a writer"
+needs = ["define_aggregate", "data_member_spec", "consteval block", "substitute", "reflect_constant", "nonstatic_data_members_of", "access_context", "type_of", "is_class_type", "is_same_type", "identifier_of", "define_static_string", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

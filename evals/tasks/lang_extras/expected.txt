@@ -1,0 +1,26 @@
+mon tue wed thu fri sat sun are 7 days
+low normal normal high are 4 levels
+first permission: read
+name of Permission 3: ?
+parse thu: true
+parse someday: false
+parse Read: false
+parse standard is normal: true
+{read, write} contains execute: false
+{read} contains read: true
+weekend: {sat, sun}
+none: {}, contains mon: false
+user is empty
+age = 9 is outside 13..120
+month = 14 is outside 1..12
+scores is empty
+problems with a good signup: 0
+problems at the limits: 0
+month is sent as birth-month
+user is sent as form [user-name], json [user]
+age has form tag []
+scores has json tag [points]
+Signup(user='ada', age=36, month=12, scores=[90, 85], level=normal, admin=true)
+Point(x=3, y=-4, label='corner')
+equal values, equal hashes: true
+other label, other hash: true

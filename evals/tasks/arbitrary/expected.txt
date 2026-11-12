@@ -1,0 +1,39 @@
+10451216379200822465
+Order{id: 719, kind: basic, code: "fcrly", items: [], adjust: [1], weight: 86}
+Order{id: 722, kind: express, code: "pbsqo", items: [Item{qty: 7, gift: false}, Item{qty: 1, gift: true}, Item{qty: 5, gift: true}, Item{qty: 2, gift: false}], adjust: [], weight: 100}
+Order{id: 893, kind: bulk, code: "gxh", items: [Item{qty: 8, gift: false}, Item{qty: 4, gift: true}, Item{qty: 6, gift: true}], adjust: [], weight: 91}
+Window{low: -35, high: 32}
+candidates:
+  Item{qty: 1, gift: true}
+  Item{qty: 3, gift: true}
+  Item{qty: 4, gift: true}
+  Item{qty: 5, gift: false}
+  Window{low: -10, high: 11}
+  Window{low: -25, high: 11}
+  Window{low: -39, high: 11}
+  Window{low: -40, high: 5}
+  Window{low: -40, high: 8}
+  Window{low: -40, high: 10}
+  Order{id: 100, kind: bulk, code: "aab", items: [Item{qty: 2, gift: false}], adjust: [-1], weight: 0}
+  Order{id: 101, kind: basic, code: "aab", items: [Item{qty: 2, gift: false}], adjust: [-1], weight: 0}
+  Order{id: 101, kind: express, code: "aab", items: [Item{qty: 2, gift: false}], adjust: [-1], weight: 0}
+  Order{id: 101, kind: bulk, code: "ab", items: [Item{qty: 2, gift: false}], adjust: [-1], weight: 0}
+  Order{id: 101, kind: bulk, code: "aa", items: [Item{qty: 2, gift: false}], adjust: [-1], weight: 0}
+  Order{id: 101, kind: bulk, code: "aaa", items: [Item{qty: 2, gift: false}], adjust: [-1], weight: 0}
+  Order{id: 101, kind: bulk, code: "aab", items: [], adjust: [-1], weight: 0}
+  Order{id: 101, kind: bulk, code: "aab", items: [Item{qty: 1, gift: false}], adjust: [-1], weight: 0}
+  Order{id: 101, kind: bulk, code: "aab", items: [Item{qty: 2, gift: false}], adjust: [], weight: 0}
+  Order{id: 101, kind: bulk, code: "aab", items: [Item{qty: 2, gift: false}], adjust: [0], weight: 0}
+at most 3 items: falsified by test 7: Order{id: 412, kind: bulk, code: "", items: [Item{qty: 2, gift: true}, Item{qty: 6, gift: false}, Item{qty: 3, gift: false}, Item{qty: 4, gift: true}], adjust: [10, 19], weight: 95}
+at most 3 items: shrunk in 11 steps to Order{id: 100, kind: basic, code: "", items: [Item{qty: 1, gift: false}, Item{qty: 1, gift: false}, Item{qty: 1, gift: false}, Item{qty: 1, gift: false}], adjust: [], weight: 0}
+total quantity below 20: falsified by test 1: Order{id: 787, kind: basic, code: "", items: [Item{qty: 8, gift: true}, Item{qty: 8, gift: false}, Item{qty: 9, gift: true}], adjust: [14, 18, -4], weight: 97}
+total quantity below 20: shrunk in 9 steps to Order{id: 100, kind: basic, code: "", items: [Item{qty: 3, gift: false}, Item{qty: 8, gift: false}, Item{qty: 9, gift: false}], adjust: [], weight: 0}
+no x in code: falsified by test 8: Order{id: 360, kind: express, code: "cxg", items: [Item{qty: 4, gift: false}, Item{qty: 2, gift: true}, Item{qty: 4, gift: false}], adjust: [-10], weight: 20}
+no x in code: shrunk in 9 steps to Order{id: 100, kind: basic, code: "x", items: [], adjust: [], weight: 0}
+adjustments above -25: falsified by test 6: Order{id: 801, kind: express, code: "ssjzv", items: [Item{qty: 6, gift: true}, Item{qty: 3, gift: true}], adjust: [-13, -13], weight: 58}
+adjustments above -25: shrunk in 11 steps to Order{id: 100, kind: basic, code: "", items: [], adjust: [-12, -13], weight: 0}
+bulk orders weigh under 90: falsified by test 46: Order{id: 390, kind: bulk, code: "cbdur", items: [Item{qty: 7, gift: true}, Item{qty: 9, gift: false}, Item{qty: 2, gift: true}, Item{qty: 1, gift: false}], adjust: [], weight: 94}
+bulk orders weigh under 90: shrunk in 14 steps to Order{id: 100, kind: bulk, code: "", items: [], adjust: [], weight: 90}
+id has three digits: passed 300 tests
+window wider than 25: falsified by test 84: Window{low: -11, high: 13}
+window wider than 25: shrunk in 2 steps to Window{low: -10, high: 5}

@@ -1,0 +1,6 @@
+title = "Nested change patches from a diff, with apply, invert and merge for undo and redo"
+needs = ["define_aggregate", "data_member_spec", "consteval block", "substitute", "dealias", "nonstatic_data_members_of", "access_context", "type_of", "identifier_of", "template_of", "has_template_arguments", "is_class_type", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

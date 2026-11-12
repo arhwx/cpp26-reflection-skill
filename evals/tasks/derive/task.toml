@@ -1,0 +1,6 @@
+title = "Rust-style derive set read from class annotations"
+needs = ["annotations_of", "extract", "type_of", "remove_const", "substitute", "nonstatic_data_members_of", "access_context", "enumerators_of", "identifier_of", "template_of", "has_template_arguments", "define_static_string", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

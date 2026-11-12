@@ -1,0 +1,6 @@
+title = "Namespace as a console: variables become settings and functions become commands"
+needs = ["members_of", "access_context", "is_variable", "is_function", "has_identifier", "identifier_of", "parameters_of", "return_type_of", "type_of", "is_const_type", "enumerators_of", "dealias", "define_static_array", "define_static_string", "template for", "type splice", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

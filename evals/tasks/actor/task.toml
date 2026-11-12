@@ -1,0 +1,6 @@
+title = "Actor mailbox with a message struct per member function"
+needs = ["members_of", "access_context", "is_function", "is_special_member_function", "is_operator_function", "return_type_of", "parameters_of", "identifier_of", "remove_cvref", "define_aggregate", "data_member_spec", "consteval block", "nonstatic_data_members_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

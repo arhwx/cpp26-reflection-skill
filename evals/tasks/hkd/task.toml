@@ -1,0 +1,6 @@
+title = "Higher-kinded data: one struct mapped through optional, vector, reference_wrapper and alias templates"
+needs = ["nonstatic_data_members_of", "access_context", "substitute", "define_aggregate", "data_member_spec", "consteval block", "identifier_of", "type_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

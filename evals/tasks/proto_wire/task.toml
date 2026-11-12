@@ -1,0 +1,6 @@
+title = "Protobuf-style wire format and .proto text from field-number annotations"
+needs = ["annotations", "annotations_of", "extract", "remove_const", "type_of", "nonstatic_data_members_of", "access_context", "identifier_of", "dealias", "template_of", "template_arguments_of", "has_template_arguments", "is_same_type", "is_enum_type", "is_class_type", "enumerators_of", "define_static_string", "define_static_array", "template for", "splice", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

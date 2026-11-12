@@ -1,0 +1,9 @@
+{"accountId":7,"ownerName":"ada","role":"admin","balance":"120.50","homeAddress":{"streetName":"Main St","houseNumber":3},"nickName":null,"recentLogins":[3,5,8],"tags":[{"tag_name":"vip"},{"tag_name":"beta"}]}
+{"accountId":7,"ownerName":"ada","role":"admin","balance":"120.50","homeAddress":{"streetName":"Main St","houseNumber":3},"nickName":null,"recentLogins":[3,5,8],"tags":[{"tag_name":"vip","weight":1.5},{"tag_name":"beta","weight":0.25}],"twoFactor":true}
+["guest","admin"]
+[{"x_pos":1,"y_pos":-2,"label":"a"},null]
+"0.05"
+ok
+Clash: two members map to the key 'user_id'
+CamelClash: two members map to the key 'itemCount2'
+Hidden has members the library cannot see; add: friend struct json::access;

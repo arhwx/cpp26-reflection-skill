@@ -1,0 +1,14 @@
+{id: 1, name: countess, email: al@example.org, password_hash: x9f}
+{id: 1, name: countess, email: al@example.org}
+{email: ada@example.org, password_hash: x9f}
+{id: 1, email: ada@example.org}
+{id: 0, name: , email: ada@example.org, password_hash: x9f}
+{id: 7, name: none, email: none, password_hash: none}
+{id: 7, name: ada lovelace, email: ada@example.org, password_hash: x9f}
+{id: 7, name: none, email: ada@lovelace.org, password_hash: none}
+{id: 7, name: ada lovelace, email: ada@lovelace.org, password_hash: x9f}
+{id: 7, name: none, email: ada@example.org, password_hash: none}
+get name on User: true, on Login: false
+get nme on User: false
+User has no member 'pasword_hash'
+ok

@@ -1,0 +1,62 @@
+== memo outside trace
+-> fib(n=20)
+<- fib = 6765
+fib(20) = 6765
+fib(20) = 6765
+body calls: 21891
+== trace outside memo
+-> square(x=7)
+<- square = 49
+square(7) = 49
+-> square(x=7)
+<- square = 49
+square(7) = 49
+body calls: 1
+doubled(4) = 8
+tripled(4) = 12
+== retry
+-> fetch(id=4)
+<- fetch threw timeout
+retry fetch: attempt 1 of 3 failed: timeout
+-> fetch(id=4)
+<- fetch threw timeout
+retry fetch: attempt 2 of 3 failed: timeout
+-> fetch(id=4)
+<- fetch = 40
+fetch(4) = 40
+-> fetch(id=5)
+<- fetch threw timeout
+retry fetch: attempt 1 of 3 failed: timeout
+-> fetch(id=5)
+<- fetch threw timeout
+retry fetch: attempt 2 of 3 failed: timeout
+-> fetch(id=5)
+<- fetch threw timeout
+retry fetch: attempt 3 of 3 failed: timeout
+gave up: timeout
+== user decorators
+frame add [ a b ]
+add(2, 3) = 60
+add2(2, 3) = 51
+plain(1) = 2
+-> greet(who=ada)
+hello ada
+hello ada
+<- greet
+== nesting
+-> total(a=10, b=3)
+  -> fib(n=10)
+  <- fib = 55
+  -> square(x=3)
+  <- square = 9
+  -> fee(amount=200, percent=10)
+  <- fee = 20
+<- total = 84
+total(10, 3) = 84
+== signatures
+fib(int): true
+fib(const char*): false
+fib(int, int): false
+greet(const char*): true
+fee(int, int): true
+fee(): false

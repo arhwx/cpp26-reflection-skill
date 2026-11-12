@@ -1,0 +1,89 @@
+== int
+int (signed integer)
+== reference to const pointer
+char const* const& (lvalue reference)
+  to: char const* const (pointer, const)
+    to: char const (character, const)
+== Shape
+Shape (class)
+  base: Point (class)
+    .x: int (signed integer)
+    .y: int (signed integer)
+  .color: Color (enum class)
+    underlying: unsigned char (unsigned integer)
+    red = 1
+    green = 2
+    blue = 4
+  .label: char const* (pointer)
+    to: char const (character, const)
+  .area: double(Shape const&)* (pointer)
+    to: double(Shape const&) (function)
+      returns: double (floating point)
+      param: Shape const& (lvalue reference)
+        to: Shape const (class, const, see above)
+  .corners: Buffer<Point, 2> (class)
+    arg: Point (class, see above)
+    arg: 2
+    .items: Point[2] (array)
+      element: Point (class, see above)
+    .used: int (signed integer)
+  .range: (unnamed) (class)
+    .lo: short (signed integer)
+    .hi: short (signed integer)
+  .weight: Number (union)
+    .i: int (signed integer)
+    .d: double (floating point)
+== Node
+Node (class)
+  .value: long (signed integer)
+  .next: Node* (pointer)
+    to: Node (class, see above)
+  .prev: Node const* (pointer)
+    to: Node const (class, const, see above)
+== Entry
+Entry (class)
+  .id: unsigned long long (unsigned integer)
+  .level: Level (enum)
+    underlying: short (signed integer)
+    low = -1
+    mid = 0
+    high = 1
+  .value: Number (union)
+    .i: int (signed integer)
+    .d: double (floating point)
+  .tags: List<unsigned long long, Flag<true>, Offset<-2>> (class)
+    arg: unsigned long long (unsigned integer)
+    arg: Flag<true> (class)
+      arg: true
+    arg: Offset<-2> (class)
+      arg: -2
+  .anchor: Point& (lvalue reference)
+    to: Point (class)
+      .x: int (signed integer)
+      .y: int (signed integer)
+  .scores: float[3] (array)
+    element: float (floating point)
+== array of function pointers
+int(char, Point&&)*[2] (array)
+  element: int(char, Point&&)* (pointer)
+    to: int(char, Point&&) (function)
+      returns: int (signed integer)
+      param: char (character)
+      param: Point&& (rvalue reference)
+        to: Point (class)
+          .x: int (signed integer)
+          .y: int (signed integer)
+== function type
+void(Color, Color const&) (function)
+  returns: void (void)
+  param: Color (enum class)
+    underlying: unsigned char (unsigned integer)
+    red = 1
+    green = 2
+    blue = 4
+  param: Color const& (lvalue reference)
+    to: Color const (enum class, const, see above)
+== empty list
+List<> (class)
+== const volatile alias
+unsigned long long const volatile (unsigned integer, const volatile)

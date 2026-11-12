@@ -1,0 +1,40 @@
+Item { name: "lamp", color: Green, at: Point { x: 1, y: 2 }, price: 9.5, grade: 'A' }
+Pair { first: Pair { first: 1, second: 2 }, second: Pair { first: 3, second: 4 } }
+Unit
+Tagged { tags: ["new", "sale"], mood: Angry }
+"hi \"you\"" 42 'x'
+eq(lamp, copy) = true
+eq(lamp, moved) = false
+eq(Red, Red) = true
+cmp(Point{1, 2}, Point{1, 3}) = less
+cmp(Point{2, 0}, Point{1, 9}) = greater
+cmp(Blue, Red) = greater
+cmp(L, S) = greater
+cmp(pairs of points) = greater
+cmp(pairs of doubles) = equivalent
+hash equal for equal items: true
+hash depends on order: true
+distinct items: 2
+has<Point, Hash>: true
+has<Item, Ord>: false
+has<Mood, Eq>: false
+has<Size, Eq>: true
+has<Size, Debug>: false
+has<int, Ord>: true
+has<Plain, Eq>: false
+has<Pair<int>, Ord>: true
+has<Pair<Plain>, Eq>: false
+has<Pair<Mood>, Debug>: true
+has<Pair<Mood>, Ord>: false
+has<Line, Debug>: true
+has<Line, Ord>: false
+has<Tagged, Hash>: false
+comparable<Point>: true, comparable<Item>: false
+printable<Cart>: false, printable<Size>: false
+check<Point>: ok
+check<Item>: ok
+check<Line>: Line: Ord requires Eq
+check<Cart>: Cart: member 'size' does not implement Debug
+check<Tagged>: Tagged: member 'mood' does not implement Eq
+check<Pair<Plain>>: Pair: member 'first' does not implement Debug
+check<Plain>: ok

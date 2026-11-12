@@ -1,0 +1,70 @@
+name: string
+verbose: bool
+version: string
+server.host: string
+server.port: int
+server.timeout: double
+server.banner: string
+database.url: string
+database.pool: int
+database.ratio: double
+database.code: string
+server.port: true, port: false
+defaults: port 8080 timeout 2.5 banner [  welcome  ] code 42 ratio -0.25
+---
+name = "demo"
+verbose = false
+version = "1.2.3"
+
+[server]
+host = "localhost"
+port = 8080
+timeout = 2.5
+banner = "  welcome  "
+
+[database]
+url = "postgres://db/app?mode=ro"
+pool = 4
+ratio = -0.25
+code = "42"
+
+[empty]
+---
+6 errors
+  line 2: verbose expects bool, got 'yes'
+  line 5: unknown key 'server.hots'
+  line 8: unknown key 'server.verbose'
+  line 9: unknown section 'cache'
+  line 13: database.pool expects int, got 'many'
+  line 16: expected 'key = value'
+---
+name = "production"
+verbose = false
+version = "1.2.3"
+
+[server]
+host = "localhost"
+port = 9091
+timeout = 30
+banner = "  welcome  "
+
+[database]
+url = "sqlite://"
+pool = 4
+ratio = 0.5
+code = "7"
+
+[empty]
+---
+round trip: 0 errors, same text: true
+2 errors
+  line 1: unknown key 'server'
+  line 4: server.port expects int, got '99999999999'
+port 0 host []
+ok
+line 2: expected 'key = value'
+line 2: 'max-conn' is not an identifier
+line 4: key 'b' appears twice
+line 4: section 's' appears twice
+line 2: section 'a' has the name of a key
+line 1: '1st' is not an identifier

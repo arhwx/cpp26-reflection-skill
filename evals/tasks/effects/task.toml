@@ -1,0 +1,6 @@
+title = "Algebraic effects with handler methods found by parameter type"
+needs = ["members_of", "access_context", "is_function", "is_constructor", "parameters_of", "type_of", "remove_cvref", "is_same_type", "identifier_of", "nonstatic_data_members_of", "define_static_string", "define_static_array", "template for", "member function splice", "pack reflection", "coroutines"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

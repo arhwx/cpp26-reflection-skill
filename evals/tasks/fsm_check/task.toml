@@ -1,0 +1,6 @@
+title = "State machine from enumerator annotations with compile-time checks and DOT output"
+needs = ["enumerators_of", "annotations_of", "extract", "type_of", "remove_const", "identifier_of", "constant_of", "define_static_array", "define_static_string", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

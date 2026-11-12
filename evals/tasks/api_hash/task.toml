@@ -1,0 +1,6 @@
+title = "Public API snapshot of a namespace with an own type printer, hashed for a static_assert guard"
+needs = ["members_of", "access_context", "is_namespace", "is_type_alias", "is_template", "is_function", "is_variable", "parameters_of", "has_default_argument", "return_type_of", "is_const", "is_noexcept", "is_user_declared", "is_deleted", "operator_of", "symbol_of", "dealias", "parent_of", "enumerators_of", "underlying_type", "substitute", "reflect_constant", "extract", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

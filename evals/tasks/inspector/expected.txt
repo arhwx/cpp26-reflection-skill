@@ -1,0 +1,92 @@
+Studio
+  Studio name = "main room"
+  volume = 7 (0..10)
+  gain = 0.25 (0..1)
+  mode = (light) [dark] (system)
+  fullscreen = [x]
+  id = 42 (read-only)
+  muted = [ ]
+  Screen:
+    width = 1920 (640..7680)
+    height = 1080 (480..4320)
+    quality = (low) (medium) [high] [best]
+    refresh rate = 59.94 (30..240)
+  info:
+    build = "2026.11" (read-only)
+    plugins = 3 (read-only)
+    licensed = [x] (read-only)
+  frames = -12
+set volume to "9": ok
+set volume to "12": volume: 12 is outside 0..10
+set volume to "-1": volume: -1 is outside 0..10
+set volume to "7.5": volume: "7.5" is not a whole number
+set volume to "": volume: "" is not a whole number
+set volume to "010": ok
+set gain to "1.5": gain: 1.5 is outside 0..1
+set gain to "half": gain: "half" is not a number
+set gain to "0.75": ok
+set mode to "System": mode: "System" is not one of light, dark, system
+set mode to "system": ok
+set fullscreen to "yes": fullscreen: "yes" is not true or false
+set fullscreen to "false": ok
+set muted to "true": ok
+set id to "1": id: read-only
+set name to "B studio": ok
+set Studio name to "C": Studio name: no such field
+set display to "1": display: is a group
+set display.width to "3840": ok
+set display.height to "100": display.height: 100 is outside 480..4320
+set display.depth to "1": display.depth: no such field
+set display.quality to "low": ok
+set display.quality to "ultra": display.quality: "ultra" is not one of low, medium, high, best
+set display.hz to "143.5": ok
+set info.plugins to "4": info.plugins: read-only
+set info to "x": info: is a group
+set volume.max to "3": volume.max: no such field
+set frames to "99999": ok
+set frames to "+5": frames: "+5" is not a whole number
+set nothing to "1": nothing: no such field
+Studio
+  Studio name = "B studio"
+  volume = 10 (0..10)
+  gain = 0.75 (0..1)
+  mode = (light) (dark) [system]
+  fullscreen = [ ]
+  id = 42 (read-only)
+  muted = [x]
+  Screen:
+    width = 3840 (640..7680)
+    height = 1080 (480..4320)
+    quality = [low] (medium) (high) (best)
+    refresh rate = 143.5 (30..240)
+  info:
+    build = "2026.11" (read-only)
+    plugins = 3 (read-only)
+    licensed = [x] (read-only)
+  frames = 99999
+-- best is high
+set display.quality to "best": ok
+Studio
+  Studio name = "B studio"
+  volume = 15 (0..10) out of range
+  gain = -0.5 (0..1) out of range
+  mode = (light) (dark) (system)
+  fullscreen = [ ]
+  id = 42 (read-only)
+  muted = [x]
+  Screen:
+    width = 3840 (640..7680)
+    height = 1080 (480..4320)
+    quality = (low) (medium) [high] [best]
+    refresh rate = 143.5 (30..240)
+  info:
+    build = "2026.11" (read-only)
+    plugins = 3 (read-only)
+    licensed = [x] (read-only)
+  frames = 99999
+-- a display alone
+Display
+  width = 639 (640..7680) out of range
+  height = 1080 (480..4320)
+  quality = (low) (medium) [high] [best]
+  refresh rate = 240 (30..240)

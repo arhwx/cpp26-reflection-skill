@@ -1,0 +1,45 @@
+variables:
+  MYAPP_NAME
+  MYAPP_LOG_LEVEL
+  MYAPP_DB_HOST
+  MYAPP_DB_PORT
+  MYAPP_DB_PASSWORD
+  MYAPP_DB_POOL
+  MYAPP_REDIS_ENABLED
+  MYAPP_REDIS_TTL
+  MYAPP_REDIS_SHARDS
+  MYAPP_HOSTS
+  MYAPP_PORTS
+nothing set:
+  1 error(s)
+  MYAPP_DB_PASSWORD: required but not set
+  name=demo log_level=info db=localhost:5432 password= pool=4
+  cache enabled=false ttl=1.5 shards=none hosts=[] ports=[80]
+all valid:
+  0 error(s)
+  name=demo log_level=warn db=db.internal:6543 password=swordfish pool=16
+  cache enabled=true ttl=0.25 shards=3 hosts=["a.example", "b.example"] ports=[]
+some invalid:
+  5 error(s)
+  MYAPP_LOG_LEVEL: invalid value 'Warn'
+  MYAPP_DB_PORT: invalid value '70000'
+  MYAPP_REDIS_ENABLED: invalid value 'maybe'
+  MYAPP_REDIS_SHARDS: invalid value 'two'
+  MYAPP_PORTS: invalid value '8080,x'
+  name= log_level=warn db=db.internal:6543 password=swordfish pool=-3
+  cache enabled=true ttl=1000 shards=3 hosts=["c.example"] ports=[]
+db alone:
+  2 error(s)
+  PG_PORT: invalid value ' 15'
+  PG_PASSWORD: required but not set
+  pg.local:5432 pool=4
+flags:
+  1 error(s)
+  F_LEVELS: invalid value 'error,debug,,info'
+  debug=false levels=0
+  0 error(s)
+  debug=false levels=3
+loadable Config: true
+loadable Db: true
+loadable Pointer: false
+loadable HasPointer: false

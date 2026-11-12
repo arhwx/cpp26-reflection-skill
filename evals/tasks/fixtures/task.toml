@@ -1,0 +1,6 @@
+title = "pytest-style fixtures injected by parameter name"
+needs = ["members_of", "access_context", "is_function", "has_identifier", "identifier_of", "parameters_of", "return_type_of", "substitute", "reflect_constant", "define_aggregate", "data_member_spec", "std::meta::exception", "define_static_string", "define_static_array", "template for", "splice"]
+fork_ok = false
+fork_note = "the fork has no std::meta::exception, the natural way for the compile-time walk to stop with a message"
+cxx20_fallback = false
+holdout = true

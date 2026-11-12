@@ -1,0 +1,6 @@
+title = "Generated snapshot struct of annotated members with delta encoding"
+needs = ["annotations", "annotations_of", "nonstatic_data_members_of", "access_context", "define_aggregate", "data_member_spec", "identifier_of", "type_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

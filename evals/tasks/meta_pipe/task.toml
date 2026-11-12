@@ -1,0 +1,6 @@
+title = "Type transformation pipelines whose words are looked up among the functions of std::meta"
+needs = ["members_of", "access_context", "is_function", "has_identifier", "identifier_of", "parameters_of", "return_type_of", "type_of", "is_same_type", "std::meta::exception", "define_static_array", "define_static_string", "template for", "splice", "type splice"]
+fork_ok = false
+fork_note = "the fork has no std::meta::exception, and members_of(^^std::meta) does not yield its functions as info(info)"
+cxx20_fallback = false
+holdout = true

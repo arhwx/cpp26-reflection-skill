@@ -1,0 +1,38 @@
+Element: 54 keys, table at most twice the keys: true, distinct slots: true
+Anagram: 11 keys, table at most twice the keys: true, distinct slots: true
+Color: 3 keys, table at most twice the keys: true, distinct slots: true
+Config: 5 keys, table at most twice the keys: true, distinct slots: true
+Nothing table size: 0
+all elements found in order: true, sum 1485
+all anagrams found: true
+"Fe" -> 26
+"I" -> 53
+"In" -> 49
+"Xe" -> 54
+"" -> none
+"h" -> none
+"HE" -> none
+"Xe " -> none
+"Uuo" -> none
+"Hee" -> none
+Fe with a trailing NUL found: false
+"abb" -> none
+"cba" -> 10
+"success" -> 0
+"ok" -> 0
+"failed" -> 2
+"fail" -> none
+"only" -> 0
+"" -> none
+"anything" -> none
+"" -> none
+"port" = 8080
+"host" = localhost
+"ratio" = 0.5
+"verbose" = false
+"verbosity" = 1
+"secret_": no such field
+"Port": no such field
+"verb": no such field
+"": no such field
+set port: true, port is now 9090

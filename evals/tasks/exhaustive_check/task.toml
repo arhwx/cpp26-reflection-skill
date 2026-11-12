@@ -1,0 +1,6 @@
+title = "Every small value of a struct, tried against a property, SmallCheck style"
+needs = ["nonstatic_data_members_of", "access_context", "enumerators_of", "annotations_of", "extract", "remove_const", "type_of", "identifier_of", "is_enum_type", "define_static_array", "template for", "splice", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

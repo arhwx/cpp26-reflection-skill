@@ -1,0 +1,9 @@
+gross 60 rebate 6 net 54 tax 13.5 total 67.5 per item 22.5
+ok: gross rebate net tax total per_item
+with qty 10 the total is 225
+at compile time: total 67.5 per item 22.5
+half 7 mixed 12
+ok: half mixed
+formula cycle: a -> b -> c -> a
+formula of 'twice': unknown name 'widht'
+formula of 'y': expected ')'

@@ -1,0 +1,6 @@
+title = "GLSL-style vector with generated named members and swizzles"
+needs = ["define_aggregate", "data_member_spec", "consteval block", "nonstatic_data_members_of", "access_context", "identifier_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

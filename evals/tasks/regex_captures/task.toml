@@ -1,0 +1,6 @@
+title = "Regex with named groups as typed struct members"
+needs = ["define_aggregate", "data_member_spec", "substitute", "consteval block", "define_static_string", "define_static_array", "nonstatic_data_members_of", "access_context", "type_of", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

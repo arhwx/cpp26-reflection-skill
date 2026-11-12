@@ -1,0 +1,16 @@
+rect: 6
+square: 16
+total after scale: 5.5
+rect is now 1 x 1.5
+square with area 4
+renamed: rex rex
+Rect implements Shape: true
+Square implements Shape: true
+Pet implements Named: true
+Rect implements Named: false
+Blob implements Shape: false
+why_not(Rect, Shape): ""
+Blob does not satisfy Shape: missing scale, name
+Gauge does not satisfy Shape: missing area
+Rect does not satisfy Named: missing rename
+Pet does not satisfy Shape: missing area, scale

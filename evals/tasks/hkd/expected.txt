@@ -1,0 +1,33 @@
+draft:
+  name: set to "ada"
+  age: missing
+  balance: set to 12.5
+  vip: missing
+complete: false
+complete after age and vip: true
+  Account{"ada", 36, 12.5, false}
+columns:
+  Account{"bob", 41, 0, true}
+  Account{"cy", 29, -3, false}
+  row 2 is out of range
+  name has 3: true
+  age has 3: true
+  balance has 3: true
+  vip has 3: false
+  Account{"cy", 29, -3, true}
+references:
+  name = "ada lovelace"
+  age = 37
+  balance = 25
+  vip = false
+  Account{"ada lovelace", 37, 25, false}
+versions:
+  name v2: "ada lovelace"
+  age v2: 99
+  balance v2: 25
+  vip v2: false
+owned:
+  name -> "cy"
+  age -> 29
+  balance -> -3
+  vip -> true

@@ -1,0 +1,19 @@
+requests at start: 0
+requests after one bump: 1
+buffer size: 3
+requests now: 4
+errors now: 1
+unused: 0
+plugins after the first add: 1
+  early: gzip
+plugins now: 4
+plugins: gzip=6 brotli=11 zstd=19 lz4=1
+codecs: lz4=1 zstd=19
+unused types: 0
+bumps of Plugins: 1
+bumps of Codecs: 0
+Zstd in plugins: 2
+Zstd in codecs: 1
+Gzip in codecs: -1
+Lz4 in plugins before it was added: -1
+Lz4 in plugins now: 3

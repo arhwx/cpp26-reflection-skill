@@ -1,0 +1,42 @@
+class Cart
+class Money
+ctor Cart()
+ctor Cart(unsigned long)
+enum Cart::State: int
+enum Currency: unsigned char
+enumerator Cart::State::open = 0
+enumerator Cart::State::paid = 10
+enumerator Currency::eur = 1
+enumerator Currency::gbp = 4
+enumerator Currency::usd = 2
+field Money::cents: long long
+field Money::currency: Currency
+fn Money::zero(Currency = ?) -> Money
+fn apply(Cart&, Money&&) noexcept -> void
+fn argv_like(int*&) -> char* const*
+fn parse(char const*) -> Money
+fn parse(char const*, unsigned long) -> Money
+fn tax::rate(Currency) -> double
+method Cart::add(unsigned long, int = ?) -> void
+method Cart::label() const -> char const*
+method Cart::state() const noexcept -> Cart::State
+method Cart::total() const -> Money
+method Money::operator==(Money const&) const -> bool
+method Money::scaled(double) const noexcept -> Money
+template convert
+using id_t = unsigned long
+var Cart::max_items: int
+var tax::rounding: int
+var version: int const
+hash of shop: 0xe51dc5ffc47ecff0
+class Point
+field Point::x: double
+field Point::y: double
+fn dist(Point const&, Point const&) -> double
+var dims: int const
+hash of geo_a: 0x11552bc56ae2a317
+geo_b reordered: same api
+geo_c aliases: same api
+geo_d by value: api changed
+geo_e default argument: api changed
+geo_f long dims: api changed

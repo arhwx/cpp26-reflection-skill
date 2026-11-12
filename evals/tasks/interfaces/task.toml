@@ -1,0 +1,6 @@
+title = "Go-style interfaces with a type-erased handle and real method-call syntax"
+needs = ["members_of", "access_context", "is_function", "has_identifier", "is_static_member", "is_const", "identifier_of", "return_type_of", "parameters_of", "type_of", "dealias", "define_aggregate", "data_member_spec", "substitute", "reflect_constant", "define_static_string", "define_static_array", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

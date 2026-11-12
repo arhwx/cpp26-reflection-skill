@@ -1,0 +1,6 @@
+title = "Recording mocks and logging proxies generated from an interface struct"
+needs = ["members_of", "access_context", "is_function", "has_identifier", "is_static_member", "is_constructor", "is_destructor", "is_operator_function", "identifier_of", "return_type_of", "parameters_of", "type_of", "dealias", "define_aggregate", "data_member_spec", "substitute", "reflect_constant", "define_static_string", "define_static_array", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

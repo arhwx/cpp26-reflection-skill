@@ -1,0 +1,6 @@
+title = "Zig-style type info dump with portable type names"
+needs = ["dealias", "template_of", "template_arguments_of", "has_template_arguments", "is_type", "identifier_of", "has_identifier", "is_array_type", "is_pointer_type", "is_function_type", "parameters_of", "return_type_of", "is_const_type", "remove_cv", "extent", "underlying_type", "enumerators_of", "constant_of", "substitute", "extract", "bases_of", "nonstatic_data_members_of", "access_context", "type_of", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

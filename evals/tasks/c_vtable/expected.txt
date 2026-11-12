@@ -1,0 +1,36 @@
+same table: true
+host loads plugin Counter
+  Counter created
+total 11 mean 5.5 label large
+copied 11 11 0
+reset keeping count: true total 3 mean 1.5
+reset dropping count: false mean 0
+  Counter destroyed with total 5
+  Counter created
+  Counter created
+a small b large
+  Counter destroyed with total 20
+  Counter destroyed with total 1
+typedef struct Counter_vtable {
+    const char* name;
+    void* (*create)(void);
+    void (*destroy)(void* self);
+    void (*add)(void* self, int amount);
+    int (*total)(const void* self);
+    double (*mean)(const void* self, int arg1);
+    bool (*reset)(void* self, bool keep_count, long start);
+    void (*copy_to)(const void* self, int* out, unsigned times);
+    const char* (*label)(const void* self);
+} Counter_vtable;
+typedef struct Silent_vtable {
+    const char* name;
+    void* (*create)(void);
+    void (*destroy)(void* self);
+} Silent_vtable;
+Silent has no methods
+Counter: '' true
+Overloaded: 'Overloaded::set is overloaded' false
+Stringy: 'Stringy::rename parameter to has a non-C type' false
+ByRef: 'ByRef::slot returns a non-C type' false
+Configured: 'Configured has no public default constructor' false
+tables: true true false

@@ -1,0 +1,17 @@
+attachment (21 bytes): 01 0a 65 6e 67 69 6e 65 2e 70 6e 67 70 11 01 00 01 80 02 e0 01
+message 9 (9 bytes): 09 00 00 4a 01 01 00 00 01
+one byte at a time:
+  message 7 from 'ada' is complete after 50 bytes, with 2 attachments
+  message 8 from 'charles' is complete after 65 bytes, with 0 attachments
+  message 9 from '' is complete after 74 bytes, with 0 attachments
+  fed 74 bytes, pauses: 36, round trip ok
+seven bytes at a time:
+  message 7 from 'ada' is complete after 56 bytes, with 2 attachments
+  message 8 from 'charles' is complete after 70 bytes, with 0 attachments
+  message 9 from '' is complete after 74 bytes, with 0 attachments
+  fed 74 bytes, pauses: 12, round trip ok
+all at once:
+  message 7 from 'ada' is complete after 74 bytes, with 2 attachments
+  message 8 from 'charles' is complete after 74 bytes, with 0 attachments
+  message 9 from '' is complete after 74 bytes, with 0 attachments
+  fed 74 bytes, pauses: 1, round trip ok

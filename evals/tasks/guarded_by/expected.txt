@@ -1,0 +1,41 @@
+open
+  lock account
+  unlock account
+deposit
+  lock account
+  inside: balance 125, held true
+  unlock account
+after: held false
+report
+  lock account
+  open 100
+  deposit 25
+  unlock account
+whole bank
+  lock ledger
+  lock audit
+  sees total true, audits true, name false
+  held: ledger true, audit true, spare false
+  unlock audit
+  unlock ledger
+audit only
+  lock audit
+  sees total false, audits true
+  held: ledger false, audit true
+  unlock audit
+ledger only
+  lock ledger
+  total 500, entries 1
+  sees total true, audits false
+  copyable false
+  unlock ledger
+bank: total 500, entries 1, audits 2
+counter hits 6
+check Account: ok
+check Bank: ok
+check Plain: ok
+check Foreign: Foreign::y: guard is not a data member of Foreign
+check NotLockable: NotLockable::bad: guard cannot be locked
+check Twice: Twice::z: guarded more than once
+can lock: Bank true, Plain true, Foreign false, NotLockable false, Twice false
+can lock Bank by spare_mutex false, by name false

@@ -1,0 +1,6 @@
+title = "Enum handlers found by naming convention in a namespace, with missing and unused checks"
+needs = ["enumerators_of", "extract", "members_of", "access_context", "is_function", "identifier_of", "return_type_of", "define_static_string", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

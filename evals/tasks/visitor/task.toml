@@ -1,0 +1,6 @@
+title = "Generated visitor for a sealed hierarchy found by scanning a namespace"
+needs = ["members_of", "access_context", "is_type", "is_type_alias", "is_class_type", "is_base_of_type", "identifier_of", "substitute", "define_aggregate", "data_member_spec", "consteval block", "nonstatic_data_members_of", "template_arguments_of", "type_of", "define_static_array", "template for", "type splice", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

@@ -1,0 +1,35 @@
+id: true
+name: true
+tags: true
+nick: true
+grid: true
+pet age: true
+boss name: true
+score: true
+c: true
+aggregate: true
+same text, same type: true
+empty: true
+{id: 7, name: "ada", tags: ["admin", "dev"], address: {city: "Oslo", zip: 150}, nick: null, pets: [{name: "rex", age: 3}, {name: "tom", age: 5}], grid: [[1, 2], [], [3]], boss: null, score: 4.5, active: true}
+{id: 7, name: "ada", tags: ["admin", "dev"], address: {city: "Oslo west", zip: 150}, nick: "countess", pets: [{name: "rex", age: 3}], grid: [[1, 2], [], [3]], boss: {name: "grace"}, score: 4.5, active: true}
+{city: "Oslo west", zip: 150}
+{a: {}, b: null, c: []}
+{a: {}, b: [true, false], c: [1, null, 3]}
+{}
+id:int name:string           ok
+                             ok
+id:int name:strng            unknown type 'strng'
+id:int id:double             duplicate field 'id'
+a:{x:int} x:int              ok
+a:{x:int x:int}              duplicate field 'x'
+id int                       expected ':' after 'id'
+tags:[string                 missing ']'
+tags:[string}                missing ']'
+address:{city:string         missing '}'
+a:int?? b:int                expected a field name, found '?'
+a:                           missing type for 'a'
+list:[]                      missing type for 'list'
+x:int}                       expected a field name, found '}'
+1a:int                       expected a field name, found '1'
+a:int b:{c:[{d:flaot}]}      unknown type 'flaot'
+a:intb:int                   unknown type 'intb'

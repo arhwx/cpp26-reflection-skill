@@ -1,0 +1,32 @@
+[ada is 36]
+[apple |   3|    1.50]
+[37 is 0x25 in hex and 00100101 in binary]
+[A. Lovelace]
+[1.234568e+04 12345.7 +12345.7]
+[{braces} and {word}]
+[only a-0-0.00]
+[***menu****|men]
+[id=BEEF]
+[plain text]
+[]
+[pear  |  12|    0.75]
+row members: string int double
+price member: 0.75
+mixed: int int int double double double char string string string string
+same type for the same format: true
+different format, different type: false
+valid fields: true
+valid repeat with another spec: true
+valid escapes only: true
+repeat with another type: false
+unclosed brace: false
+stray close brace: false
+empty name: false
+empty name with spec: false
+name starts with digit: false
+name with dash: false
+int for int: true
+string for int: false
+char pointer for string: true
+int for string: false
+misspelled member: false

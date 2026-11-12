@@ -1,0 +1,6 @@
+title = "Secret redaction and a serializer that needs a policy for classified types"
+needs = ["annotations", "annotations_of", "nonstatic_data_members_of", "access_context", "identifier_of", "define_static_string", "define_static_array", "is_aggregate_type", "type_of", "template for", "type splice", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

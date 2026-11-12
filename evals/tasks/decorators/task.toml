@@ -1,0 +1,6 @@
+title = "Python-style decorator chains from function annotations"
+needs = ["annotations_of", "type_of", "remove_const", "is_class_type", "substitute", "extract", "parameters_of", "identifier_of", "define_static_array", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

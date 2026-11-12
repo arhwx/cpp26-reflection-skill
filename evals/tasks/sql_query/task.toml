@@ -1,0 +1,6 @@
+title = "Typed query from SQL-like text: generated row type, typed parameters, did-you-mean errors"
+needs = ["nonstatic_data_members_of", "access_context", "identifier_of", "type_of", "define_aggregate", "data_member_spec", "consteval block", "substitute", "define_static_array", "define_static_string", "template for", "type splice", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

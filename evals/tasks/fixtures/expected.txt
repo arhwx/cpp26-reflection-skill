@@ -1,0 +1,23 @@
+  open mem://test
+  login root
+PASS test_admin_shares_the_database
+  logout root
+  close mem://test
+PASS test_config_is_in_memory
+  open mem://test
+PASS test_database_starts_empty
+  close mem://test
+FAIL test_that_fails
+  open mem://test
+  login guest
+  login root
+PASS test_two_sessions
+  logout root
+  logout guest
+  close mem://test
+PASS test_without_fixtures
+5 passed, 1 failed
+run returned 1
+ok
+test_time asks for 'clokc', which is not a fixture
+fixture cycle: a -> c -> b -> a

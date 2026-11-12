@@ -1,0 +1,18 @@
+app:
+app::core::Cache: member by_id uses app::ui::Widget from a higher layer
+app::core::Cart: member view uses app::ui::Widget from a higher layer
+app::core::Mover: rule of five: declares move constructor, move assignment but not destructor, copy constructor, copy assignment
+app::core::Order: padding 11 bytes, limit 0
+app::core::Screen: member Layer is not snake_case
+app::core::Screen: base uses app::ui::Panel from a higher layer
+app::core::Session: member userId is not snake_case
+app::core::Session: rule of five: declares destructor, copy constructor but not copy assignment, move constructor, move assignment
+app::core::detail::Node: member owners uses app::ui::Widget from a higher layer
+app::db::row_cache: type name is not UpperCamelCase
+app::db::row_cache: member hitCount is not snake_case
+app::ui with ui at the bottom:
+app::ui::Panel: member rows uses app::db::Row from a higher layer
+app::ui::Widget: member order uses app::core::Order from a higher layer
+app::tools as the lowest layer:
+app::tools::Dump: member widget uses app::ui::Widget from a higher layer
+clean: no problems

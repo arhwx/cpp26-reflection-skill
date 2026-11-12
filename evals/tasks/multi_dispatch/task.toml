@@ -1,0 +1,6 @@
+title = "Multiple dispatch over plain overloads found in a namespace"
+needs = ["members_of", "access_context", "is_function", "has_identifier", "identifier_of", "parameters_of", "type_of", "return_type_of", "remove_cvref", "is_base_of_type", "substitute", "reflect_constant", "define_static_string", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

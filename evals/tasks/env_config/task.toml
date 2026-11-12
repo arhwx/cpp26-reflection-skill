@@ -1,0 +1,6 @@
+title = "Environment variables bound to nested config members by member path"
+needs = ["nonstatic_data_members_of", "access_context", "annotations_of", "extract", "define_static_string", "identifier_of", "enumerators_of", "type_of", "dealias", "template_of", "template_arguments_of", "is_aggregate_type", "define_static_array", "template for", "type splice", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

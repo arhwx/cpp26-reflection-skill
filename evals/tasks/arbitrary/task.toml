@@ -1,0 +1,6 @@
+title = "Seeded random struct values with deterministic shrinking, from range and size annotations"
+needs = ["nonstatic_data_members_of", "access_context", "annotations_of", "extract", "remove_const", "type_of", "enumerators_of", "identifier_of", "define_static_array", "template for", "type splice", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

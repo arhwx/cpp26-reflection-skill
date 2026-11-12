@@ -1,0 +1,13 @@
+name: text, moons: int, mass: double, ringed: bool
+6 planets, 244 moons
+heaviest: jupiter at 317.8 earth masses
+ringed: jupiter
+ringed: saturn
+station: text, temp: double, count: int, ok: bool, note: text
+north -3.5 -2 true cold
+south 12 7 false 12
+east 0.25 0 true yes
+3 readings, total temp 8.75
+csv: row 2 has 2 cells, the header has 3
+csv: row 2 has 3 cells, the header has 2
+ok

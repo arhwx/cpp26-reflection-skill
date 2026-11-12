@@ -1,0 +1,21 @@
+circle r=1: area 3
+square side=2: area 4
+rounded square side=3: area 8.5
+some triangle: area 3
+  print circle
+  print square
+  print rounded
+  print triangle
+printed 4
+through Square&: rounded square side=3
+hexagon: unhandled dynamic type
+plain shape: unhandled dynamic type
+brush: 7
+all cases: true
+missing triangle: false
+alias as case: false
+wrong arm: false
+unsorted: false
+pens: brush only: true
+shapes as pens: false
+below Square: true

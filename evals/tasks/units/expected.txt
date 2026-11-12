@@ -1,0 +1,36 @@
+force: 19 m*kg/s^2
+force + 1 N: 20 m*kg/s^2
+dist: 3000 m, time: 150 s
+speed: 20 m/s = 72 km/h
+90 km/h: 25 m/s
+54 km/h in m/s: 15
+energy: 57000 m^2*kg/s^2 = 0.015833333333333335 kWh
+power: 380 m^2*kg/s^3
+1 kWh: 3600000 m^2*kg/s^2
+voltage: 95 m^2*kg/s^3/A
+charge: 6 s*A
+frequency: 0.03333333333333333 1/s
+50 Hz: 50 1/s
+ratio: 6
+mass in g: 2000
+90 min in h: 1.5
+half force: 9.5 m*kg/s^2
+braking: -19 m/s^2
+area: 2 m^2
+addable m + m: true
+addable m + s: false
+addable J + N*m: true
+speed in km/h: true
+distance in km/h: false
+energy in kWh: true
+power in kWh: false
+check: ok
+check: ok
+check: unknown unit 'lb'
+check: syntax error at 3
+check: syntax error at 4
+check: syntax error at 0
+check: syntax error at 1
+check: syntax error at 2
+check: syntax error at 1
+check: unknown unit 'Km'

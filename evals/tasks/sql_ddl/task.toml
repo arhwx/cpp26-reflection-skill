@@ -1,0 +1,6 @@
+title = "CREATE TABLE text at compile time from annotations, with foreign keys that hold member reflections"
+needs = ["annotations", "annotations_of", "extract", "nonstatic_data_members_of", "access_context", "identifier_of", "parent_of", "type_of", "dealias", "template_of", "template_arguments_of", "size_of", "is_integral_type", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

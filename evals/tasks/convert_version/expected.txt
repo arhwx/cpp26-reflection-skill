@@ -1,0 +1,18 @@
+v2 id=7 full_name=Ada Lovelace email=ada@example.org address=1 Main St/London/NL age=36 tags=["new"] score=1.5
+v2 id=7 full_name=Ada Lovelace email=ada@example.org address=1 Main St/London/UK age=none tags=["new", "vip"] score=1.5
+v3 id=7 display_name=Ada Lovelace contact=ada@example.org address=1 Main St/London/NL tags=["v3"]
+v3 id=7 display_name=Ada Lovelace contact=ada@example.org address=1 Main St/London/UK tags=["new", "vip"]
+v3 id=3 display_name=ada contact=ada@badge.org address=2 Side St/Paris/NL tags=["v3"]
+v3 id=4 display_name=Ada King contact=new@example.org address=3 High St/Rome/IT tags=[]
+vec3 4 -5 9
+UserV2 from UserV1: ok
+UserV1 from UserV2: no source for 'name'
+NeedsPhone from UserV1: no source for 'phone'
+NeedsZip from UserV1: no source for 'address.zip'
+NumericName from UserV1: cannot convert 'name'
+ListAddress from UserV1: cannot convert 'address'
+Point from Vec3: no source for 'x'
+convertible UserV3 <- Badge: true
+convertible UserV1 <- UserV2: false
+convertible NeedsZip <- UserV1: false
+convertible NumericName <- UserV1: false

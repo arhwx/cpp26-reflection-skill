@@ -1,0 +1,11 @@
+circle: area 3
+rect: area 7
+dot: area 0
+copy is a circle with area 3
+(1 + (2 * -3)) = -5
+active alternative: add
+moved: (1 + (2 * -3)) = -5
+every arm: true
+missing dot: false
+misspelled dot: false
+wrong payload: false

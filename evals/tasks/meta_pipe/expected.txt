@@ -1,0 +1,33 @@
+remove_reference add_const add_pointer     int&                           -> int const*
+  remove_cvref   add_volatile              long const&                    -> long volatile
+                                           int const&                     -> int const&
+add_lvalue_reference add_rvalue_reference  int                            -> int&
+add_rvalue_reference                       int&                           -> int&
+remove_extent add_pointer                  int const[2][3]                -> (int const[3])*
+remove_all_extents remove_const            int const[2][3]                -> int
+decay                                      int const[2][3]                -> (int const[3])*
+decay                                      function                       -> function*
+underlying_type make_signed add_const      Color                          -> signed char const
+make_unsigned add_pointer add_pointer      long                           -> unsigned long**
+remove_pointer remove_pointer remove_cv    char const* volatile*          -> char
+unwrap_reference                           reference_wrapper<int>         -> int&
+unwrap_ref_decay                           reference_wrapper<int> const&  -> int&
+unwrap_reference                           int                            -> int
+runtime value: 4000000000
+checks:
+add_const remove_const                     int          -> ok
+add_pointr                                 int          -> unknown word 'add_pointr' at step 1
+remove_reference remove_reference_t        int&         -> unknown word 'remove_reference_t' at step 2
+add_const is_const                         int          -> unknown word 'is_const' at step 2
+underlying_type add_const                  int          -> 'underlying_type' failed at step 1
+remove_const  make_signed                  double const -> 'make_signed' failed at step 2
+add_pointer make_unsigned                  Color        -> 'make_unsigned' failed at step 2
+search:
+int const& to int* in 3 steps with [remove_reference remove_const add_pointer add_const]: 'remove_reference remove_const add_pointer'
+int const& to int* in 3 steps with [add_pointer remove_cv decay add_const]: 'decay add_pointer'
+int to int const* const* in 4 steps with [add_pointer add_const remove_pointer]: 'add_const add_pointer add_const add_pointer'
+int to int const* const* in 3 steps with [add_pointer add_const]: 'no pipeline'
+Color& to unsigned char in 2 steps with [underlying_type decay make_unsigned]: 'decay underlying_type'
+unsigned long to unsigned long in 2 steps with [add_pointer]: ''
+int to long in 3 steps with [remove_pointer remove_extent]: 'no pipeline'
+int* to int in 1 steps with [remove_pointer add_ponter]: 'unknown word 'add_ponter''

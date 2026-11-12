@@ -1,0 +1,6 @@
+title = "Rust-style enum with named constructors and exhaustive named match"
+needs = ["nonstatic_data_members_of", "access_context", "substitute", "reflect_constant", "define_aggregate", "data_member_spec", "consteval block", "identifier_of", "type_of", "define_static_array", "template for", "type splice", "splice"]
+fork_ok = false
+fork_note = "the fork's libc++ has no std::function_ref"
+cxx20_fallback = false
+holdout = true

@@ -1,0 +1,6 @@
+title = "Lock annotations holding a reflection, with a view that exposes guarded members while locked"
+needs = ["annotations", "annotations_of", "extract", "reflection-valued annotation", "nonstatic_data_members_of", "access_context", "substitute", "define_aggregate", "data_member_spec", "add_lvalue_reference", "identifier_of", "define_static_string", "define_static_array", "template for", "splice", "requires-clause"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

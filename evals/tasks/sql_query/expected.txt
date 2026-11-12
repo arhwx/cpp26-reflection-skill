@@ -1,0 +1,51 @@
+ByPay row: true true
+Remote row: true true
+Band row is aggregate: true
+ByPay takes text, number: true
+ByPay takes a literal and an int: true
+ByPay takes two numbers: false
+ByPay takes one argument: false
+Roster takes none: true
+Roster takes one: false
+eng paid at least 100000:
+  fay 150000
+  ada 120000
+  dee 120000
+eng paid at least 200000: 0 rows
+remote, first two:
+  1 ada eng 120000 36 true
+  4 dee eng 120000 41 true
+roster by age:
+  5 eve
+  3 cy
+  7 gus
+  1 ada
+  4 dee
+  2 bob
+  6 fay
+age in [30, 50), not sales:
+  eng ada 36
+  eng dee 41
+  ops bob 45
+age in [20, 40), not eng:
+  ops gus 33
+  sales eve 23
+select name, salary where dept = ?     ok
+select name, salry                     unknown column 'salry', did you mean 'salary'?
+select nmae                            unknown column 'nmae', did you mean 'name'?
+select ame                             unknown column 'ame', did you mean 'name'?
+select title                           unknown column 'title'
+select name where dpt = ?              unknown column 'dpt', did you mean 'dept'?
+select name where dept == ?            unknown operator '=='
+select name where age > 30             expected '?'
+select name where age ?                expected an operator after 'age'
+select name, name                      duplicate column 'name'
+selec name                             expected 'select'
+select name from staff                 unexpected 'from'
+select name order salary               expected 'by'
+select * limit ten                     expected a number after 'limit'
+select name;                           unexpected character ';'
+select                                 expected a column
+select * where remote = ? and          expected a column
+select *, name                         unexpected ','
+select name order by salry desc        unknown column 'salry', did you mean 'salary'?

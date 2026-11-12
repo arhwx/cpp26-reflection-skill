@@ -1,0 +1,26 @@
+area: 13.5
+greet: ann
+greet times: ann ann ann
+greet all: ann ann!
+greet gap: error: greet: times must be given because shout is given
+fill: [5 7 9 0 1]
+fill gap: error: fill: start must be given because step is given
+fill after gap: [5 7 9 0 1]
+answer: 42
+scaled: 4x6 40x60
+draw: box:***
+draw ink: dot:oo
+draw gap: error: draw: size must be given because ink is given
+strokes: 2
+clamp: 100 -3 50
+clamp gap: error: clamp: lo must be given because hi is given
+saved area: 10 10
+area ok: true
+area without height: false
+area misspelled: false
+area text width: false
+greet without name: false
+fill lvalue: true
+fill temporary: false
+draw without object: false
+clamp with object: false

@@ -1,0 +1,38 @@
+  ada 36 at main st, 1815 london | tea x1, cake x2 | past 1 | scores 7 8 9
+city: london
+second favorite: cake
+last score: 9
+past street: old rd
+after set:
+  ada 36 at main st, 1852 london | tea x1, cake x7 | past 1 | scores 10 8 9
+  past city: rome
+over results:
+  ada 36 at MAIN ST, 1852 london | tea x1, cake x7 | past 1 | scores 10 8 9
+  ADA 37 at main st, 1852 london | tea x1, cake x7 | past 1 | scores 10 8 9
+original:
+  ada 36 at main st, 1852 london | tea x1, cake x7 | past 1 | scores 10 8 9
+past[3] is out of range at run time
+checks:
+  ok
+  ok
+  Person has no member 'nmae'
+  Person.address has no member 'stret'
+  Person.age has no member 'value'
+  Person.name cannot be indexed
+  Person.address.city cannot be indexed
+  Person.scores has no element 3
+  Person.favorites has no element 2
+  Person.favorites[1] has no member 'price'
+  Person.favorites has no member 'name'
+  malformed path
+  malformed path
+  malformed path
+  malformed path
+  malformed path
+  malformed path
+  Vault has no member 'code'
+  ok
+zip path: true
+typo path: false
+far score: false
+zip path on Address: false

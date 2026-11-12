@@ -1,0 +1,6 @@
+title = "Enum cases, names, parsing and sets; annotation checks, tags, repr and hash"
+needs = ["enumerators_of", "identifier_of", "annotations_of", "extract", "remove_const", "type_of", "nonstatic_data_members_of", "access_context", "define_static_array", "define_static_string", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

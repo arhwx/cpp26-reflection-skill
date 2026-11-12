@@ -1,0 +1,22 @@
+results<Dashboard>: user orders credit
+results<Quick>: first lucky second
+user is User: true
+orders is vector<string>: true
+credit is int: true
+lucky is int: true
+same type: true
+sample: grace 3 3
+check Dashboard: ok
+check Quick: ok
+check Broken: Broken::count is not awaitable
+t=0 user starts
+t=0 orders starts
+t=0 credit starts
+t=30 user arrived
+t=30 credit arrived
+t=50 orders arrived
+t=50 dashboard done
+at once: one
+at once: two
+quick: one 7 two
+ada has 2 orders and 250 credit, ready at t=50

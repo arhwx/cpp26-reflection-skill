@@ -1,0 +1,6 @@
+title = "Units as types, parsed from unit text with named units from enumerator annotations"
+needs = ["enumerators_of", "annotations", "annotations_of", "extract", "identifier_of", "substitute", "reflect_constant", "define_static_string", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

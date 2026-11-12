@@ -1,0 +1,6 @@
+title = "Structural conversion between struct versions by member name, with rename annotations and defaults"
+needs = ["nonstatic_data_members_of", "access_context", "annotations_of", "extract", "define_static_string", "identifier_of", "has_default_member_initializer", "is_convertible_type", "is_aggregate_type", "type_of", "dealias", "define_static_array", "template for", "type splice", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

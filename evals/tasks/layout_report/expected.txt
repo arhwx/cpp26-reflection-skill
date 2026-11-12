@@ -1,0 +1,50 @@
+Header size=12 align=4
+  0 version size=1
+  1 hole size=3
+  4 length size=4
+  8 kind size=2
+  10 padding size=2
+  fields=3 holes=1 unused_bits=40
+Message size=40 align=8
+  0 Base::id size=2
+  2 hole size=2
+  4 head.version size=1
+  5 hole size=3
+  8 head.length size=4
+  12 head.kind size=2
+  14 hole size=2
+  16 prio bits=3
+  16.3 urgent bits=1
+  16.4 seq bits=20
+  19 name size=5
+  24 score size=8
+  32 sealed_ size=1
+  33 padding size=7
+  fields=10 holes=3 unused_bits=112
+Bits size=2 align=2
+  0 low bits=3
+  0.3 mid bits=4
+  0.7 padding bits=9
+  fields=2 holes=0 unused_bits=9
+Cell size=40 align=8
+  0 flags.low bits=3
+  0.3 flags.mid bits=4
+  0.7 hole bits=57
+  8 value size=8
+  16 history size=24
+  fields=4 holes=1 unused_bits=57
+Record size=12 align=4
+  0 flags size=2
+  2 hole size=2
+  4 id size=4
+  8 size size=2
+  10 padding size=2
+  fields=3 holes=1 unused_bits=32
+signature of Message: Base::id@0:16;head.version@32:8;head.length@64:32;head.kind@96:16;prio@128:3;urgent@131:1;seq@132:20;name@152:40;score@192:64;sealed_@256:8;=40/8
+signature of Cell: flags.low@0:3;flags.mid@3:4;value@64:64;history@128:192;=40/8
+hash of Message: 0x85a2a275624d190f
+hash of Bits: 0x5bb06c2314997c2f
+v2 other types: same layout
+v3 reordered: layout changed
+v4 renamed: layout changed
+Header with itself: same layout

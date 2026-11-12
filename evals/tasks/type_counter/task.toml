@@ -1,0 +1,6 @@
+title = "Compile-time counters and type lists whose state is held by completed classes"
+needs = ["define_aggregate", "data_member_spec", "consteval block", "is_complete_type", "substitute", "reflect_constant", "nonstatic_data_members_of", "access_context", "type_of", "template_arguments_of", "is_same_type", "define_static_array", "template for", "type splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

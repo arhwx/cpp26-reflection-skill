@@ -1,0 +1,6 @@
+title = "Resumable binary decoder for any struct, with a matching encoder"
+needs = ["nonstatic_data_members_of", "access_context", "has_template_arguments", "template_of", "type_of", "define_static_array", "template for", "splice", "type splice", "coroutines"]
+fork_ok = false
+fork_note = "the fork rejects co_await inside the body of a template for ('co_await' cannot be used outside a function)"
+cxx20_fallback = false
+holdout = true

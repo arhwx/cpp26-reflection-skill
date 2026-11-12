@@ -1,0 +1,20 @@
+  start at 5
+start returns 1
+  jump 2
+jump returns 3
+player: speed 5, height 2
+  stop
+halt returns 2
+player: speed 0, height 2
+error: no handler for value 7
+error: no handler for value 42
+levels log: ada high;bob low;
+player: ok
+typo: missing on_stop; unused on_stp
+extra: unused on_crouch; unused on_halt; unused on_zoom
+nothing: missing on_start; missing on_stop; missing on_jump
+levels: ok
+levels for Cmd: missing on_start; missing on_stop; missing on_jump; unused on_high; unused on_low
+dispatch player: true
+dispatch typo: false
+dispatch extra: false

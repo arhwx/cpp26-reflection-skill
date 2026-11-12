@@ -1,0 +1,80 @@
+export interface Entity {
+  id: number;
+}
+
+export interface Audited {
+  created_by: string;
+}
+
+export interface Address {
+  street: string;
+  zip?: string;
+}
+
+export interface Customer extends Entity {
+  name: string;
+  addresses: Address[];
+  tags: Record<string, string>;
+  vip: boolean;
+}
+
+export type Currency = "usd" | "eur" | "jpy";
+
+export interface Money {
+  amount: bigint;
+  currency: Currency;
+}
+
+export interface Item {
+  sku: string;
+  quantity: number;
+  price: Money;
+}
+
+export interface Card {
+  last4: string;
+}
+
+export interface Transfer {
+  iban: string;
+  fee: Money;
+}
+
+export type Status = "open" | "paid" | "shipped";
+
+export interface Order extends Entity, Audited {
+  customer: Customer;
+  items: Item[];
+  payment: null | Card | Transfer;
+  discounts: (number | null)[];
+  status: Status;
+  location: [number, number];
+  box: number[];
+  refund?: Money;
+}
+---
+export interface Comment {
+  text: string;
+  replies: Comment[];
+}
+---
+export interface Person {
+  name: string;
+  teams?: Team[];
+}
+
+export interface Team {
+  title: string;
+  members: Person[];
+  subteams: Record<string, Team>;
+}
+---
+export type Currency = "usd" | "eur" | "jpy";
+---
+Record<string, (number | null)[]>
+number | string | Card[]
+[boolean, bigint, Currency]
+number | boolean | null
+(null | bigint)[]
+Money[]
+[number, string][][]

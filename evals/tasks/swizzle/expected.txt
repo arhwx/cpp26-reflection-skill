@@ -1,0 +1,36 @@
+v = {x: 1, y: 20, z: 3}
+w = {x: 11, y: 30, z: 13}
+w - v = {x: 10, y: 10, z: 10}
+v * 0.5 = {x: 0.5, y: 10, z: 1.5}
+2 * v = {x: 2, y: 40, z: 6}
+dot(v, w) = 650
+v[0] = 1, cv[2] = 30
+zyx = {x: 30, y: 20, z: 1}, is vec3: true
+xx = {x: 1, y: 1}, is vec2: true
+z = 30, is float: true
+chained = {x: 20, y: 1}
+v == v: true, v == zyx: false
+wzy = {x: 4, y: 3, z: 2}, is vec3: true
+p = {x: 8, y: 2, z: 3, w: 9}
+p = {x: 30, y: 3, z: 1, w: 4}
+swapped = {x: 2, y: 1}
+bgr = {r: 0, g: 128, b: 255}
+bgr is rgb: true
+c = {r: 128, g: 255, b: 0, a: 255}, size 4
+kji = {i: 3, j: 2, k: 1}
+n.k = 3
+constexpr first = 3
+sizeof vec4 is 4 floats: true
+aggregate: true, trivially copyable: true
+member types: true true
+vec3 reads xxx: true
+vec3 reads xxxx: false
+vec4 reads xxxx: true
+vec3 reads xq: false
+vec3 reads z: true
+vec2 reads z: false
+vec3 reads empty: false
+vec3 writes xy from vec2: true
+vec3 writes xy from vec3: false
+vec3 writes xx from vec2: false
+vec3 writes xy from ijk: false

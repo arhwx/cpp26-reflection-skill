@@ -1,0 +1,43 @@
+CREATE TABLE posts (
+  id BIGINT NOT NULL PRIMARY KEY,
+  author BIGINT NOT NULL REFERENCES users(id),
+  body TEXT NOT NULL,
+  score REAL NOT NULL,
+  views INTEGER
+);
+--- schema
+CREATE TABLE tags (
+  tag_id INTEGER NOT NULL PRIMARY KEY,
+  label TEXT NOT NULL UNIQUE
+);
+
+CREATE TABLE users (
+  id BIGINT NOT NULL PRIMARY KEY,
+  user_name VARCHAR(32) NOT NULL UNIQUE,
+  email TEXT,
+  active BOOLEAN NOT NULL
+);
+
+CREATE TABLE posts (
+  id BIGINT NOT NULL PRIMARY KEY,
+  author BIGINT NOT NULL REFERENCES users(id),
+  body TEXT NOT NULL,
+  score REAL NOT NULL,
+  views INTEGER
+);
+
+CREATE TABLE Comment (
+  id INTEGER NOT NULL PRIMARY KEY,
+  post BIGINT NOT NULL REFERENCES posts(id),
+  reply_to INTEGER REFERENCES Comment(id),
+  by VARCHAR(32) NOT NULL REFERENCES users(user_name),
+  weight REAL NOT NULL
+);
+--- checks
+User: ok
+Comment: ok
+Pointer: Pointer.name: unsupported type
+TwoKeys: pairs.right: second primary key
+NotKey: NotKey.body: posts.body is not a primary key or unique
+Narrow: Narrow.user: type INTEGER differs from users.id type BIGINT
+LongName: LongName.user: type TEXT differs from users.user_name type VARCHAR(32)

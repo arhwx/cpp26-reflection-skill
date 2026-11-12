@@ -1,0 +1,21 @@
+asteroid x asteroid -> they bounce
+asteroid x ship     -> the ship is damaged
+asteroid x fighter  -> the ship is damaged
+ship     x asteroid -> the ship is damaged
+ship     x ship     -> the ships dock
+ship     x fighter  -> the ships dock
+fighter  x asteroid -> the fighter shoots the asteroid
+fighter  x ship     -> the ships dock
+fighter  x fighter  -> the ships dock
+18 calls, 9 overload scans
+crew of the asteroid: 0
+crew of the ship: 3
+crew of the fighter: 1
+12 overload scans
+crew of a fighter seen as a ship: 1
+refuel: refueled
+refuel failed: no applicable method
+check collide: ""
+check crew: ""
+ambiguous: meet(Left, Base) and meet(Base, Left); define meet(Left, Left)
+ambiguous: touch(Left, Base) and touch(Base, Right); define touch(Left, Right)

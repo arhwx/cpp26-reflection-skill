@@ -1,0 +1,30 @@
+? name
+> rolled 4 and 5
+> ada scores 9
+result: ada:9:paid@1815
+dice at 5, bank at 110
+result: test:12:paid@0
+  Ask{prompt: name} -> test
+  Roll{sides: 6} -> 6
+  Roll{sides: 6} -> 6
+  Tell{text: rolled 6 and 6}
+  Tell{text: test scores 12}
+  Pay{to: test, amount: 120} -> true
+  Now{} -> 0
+? name
+> rolled 6 and 6
+> ada scores 12
+result: ada:12:unpaid@0
+  Ask{prompt: name} -> ada
+  Roll{sides: 6} -> 6
+  Roll{sides: 6} -> 6
+  Tell{text: rolled 6 and 6}
+  Tell{text: ada scores 12}
+  Pay{to: ada, amount: 120} -> false
+  Now{} -> 0
+dice at 5, bank at 110
+ok
+no handler for Roll among Console, Clock
+no handler for Ask, Roll, Pay among Clock
+Loaded has two handlers for Roll
+no handler for Roll among Picky, Console

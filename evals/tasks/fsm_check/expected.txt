@@ -1,0 +1,70 @@
+Door: valid=true
+Conn: valid=true
+Single: valid=true
+NoStart: valid=false
+no initial state
+A: unreachable
+B: unreachable
+Twice: valid=false
+several initial states: Left, Right, Down
+Messy: valid=false
+Start: event 'next' has more than one transition
+Middle: event 'next' goes to unknown state 'Ende'
+End: terminal state has transitions
+Island: event 'next' goes to unknown state 'Gone'
+Island: event 'next' has more than one transition
+Island: unreachable
+Lost: unreachable
+Lost: dead end
+Stuck: unreachable
+Stuck: dead end
+digraph Door {
+  start [shape=point];
+  start -> Closed;
+  Closed -> Opened [label="open"];
+  Closed -> Locked [label="lock"];
+  Opened -> Closed [label="close"];
+  Locked -> Closed [label="unlock"];
+  Locked -> Broken [label="smash"];
+  Broken [shape=doublecircle];
+}
+digraph Conn {
+  start [shape=point];
+  start -> Idle;
+  Done [shape=doublecircle];
+  Idle -> Dialing [label="dial"];
+  Dialing -> Online [label="ok"];
+  Dialing -> Idle [label="fail"];
+  Dialing -> Done [label="hangup"];
+  Online -> Done [label="hangup"];
+  Online -> Dialing [label="drop"];
+}
+digraph Single {
+  start [shape=point];
+  start -> Only;
+  Only [shape=doublecircle];
+}
+start in Closed
+  open    -> Opened
+  lock    -> Opened (ignored)
+  close   -> Closed
+  lock    -> Locked
+  open    -> Locked (ignored)
+  unlock  -> Closed
+  lock    -> Locked
+  smash   -> Broken [terminal]
+  unlock  -> Broken (ignored) [terminal]
+start in Idle
+  dial    -> Dialing
+  fail    -> Idle
+  ok      -> Idle (ignored)
+  dial    -> Dialing
+  ok      -> Online
+  drop    -> Dialing
+  ok      -> Online
+  hangup  -> Done [terminal]
+  dial    -> Done (ignored) [terminal]
+start in Only
+  go      -> Only (ignored) [terminal]
+state value 2
+machines: true true false false

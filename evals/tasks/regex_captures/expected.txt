@@ -1,0 +1,47 @@
+date 5/11/2026 sum=2042
+date 2026-1-05: false
+log level=WARN module=net pid=42 msg='link down'
+log level=INFO module=db pid=- msg='ready'
+log no match: info db: ready
+log no match: ERR fs[x]: bad
+path dir='usr/local' file='lib.so'
+path dir='' file='x'
+path no match: a/b/
+path no match: noslash
+duration 250 ms
+duration 5 m
+duration -12 s
+duration no match: 3h
+literal hex=0x1f dec=-
+literal hex=- dec=42
+literal no match: 0x
+literal no match: 0x2G
+list first=a last=c
+list first=solo last=-
+list no match: a,,b
+file stem=tar ext=gz
+file stem=notes ext=txt
+file no match: README
+number 123
+number -7
+number no value: 12a
+number no value: 99999999999
+number no value: --1
+decimal 3.14: true
+decimal 3.: false
+decimal 17: true
+check: ok
+check: ok
+check: duplicate group 'a'
+check: unclosed group
+check: unmatched ')'
+check: nothing to repeat
+check: nothing to repeat
+check: nothing to repeat
+check: bad group
+check: bad group
+check: unknown type 'float'
+check: unknown escape '\q'
+check: unclosed class
+check: ok
+check: trailing backslash

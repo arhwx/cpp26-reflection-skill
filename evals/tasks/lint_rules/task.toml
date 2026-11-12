@@ -1,0 +1,6 @@
+title = "Compile-time lints: naming, rule of five, padding budget and namespace layering"
+needs = ["members_of", "nonstatic_data_members_of", "bases_of", "access_context", "is_namespace", "is_class_type", "is_union_type", "is_complete_type", "parent_of", "identifier_of", "is_user_declared", "is_destructor", "is_copy_constructor", "is_copy_assignment", "is_move_constructor", "is_move_assignment", "annotations_of", "extract", "size_of", "dealias", "has_template_arguments", "template_arguments_of", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

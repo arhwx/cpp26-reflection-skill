@@ -1,0 +1,6 @@
+title = "Register DSL: bit-field structs from layout text, IRQ vector table and pin conflict check"
+needs = ["define_aggregate", "data_member_spec", "bit_width", "consteval block", "nonstatic_data_members_of", "members_of", "access_context", "offset_of", "bit_size_of", "is_function", "is_class_type", "annotations", "annotations_of", "extract", "identifier_of", "type_of", "define_static_string", "define_static_array", "template for", "splice"]
+fork_ok = false
+fork_note = "the fork's data_member_options has no bit_width member, only the pre-standard width"
+cxx20_fallback = false
+holdout = true

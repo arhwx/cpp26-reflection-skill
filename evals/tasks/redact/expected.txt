@@ -1,0 +1,26 @@
+{id: 12, name: "Ada", ssn: ***, card: {number: ***, expiry: "12/29"}, spare: ***, insured: true, weight: 61.5}
+{user: "ada", password: ***, pin: ***}
+{owner: "Bob", card: {number: ***, expiry: "07/27"}}
+{name: "Cardiology", last: {patient: 12, ward: "B2", hours: 1.25}, open: false}
+{patient: 12, ward: "B2", hours: 1.25}
+{name: "Cardiology", last: {patient: 12, ward: "B2", hours: 1.25}, open: false}
+{id: 12, name: "Ada", ssn: "...6789", card: {number: "...1111", expiry: "12/29"}, spare: <spare hidden>, insured: true, weight: 61.5}
+{user: "ada", password: "...fish", pin: <pin hidden>}
+{id: 12, name: "Ada", ssn: <ssn>, card: {number: <card.number>, expiry: "12/29"}, spare: <spare>, insured: true, weight: 61.5}
+{owner: "Bob", card: {number: '378282246310005', expiry: "07/27"}}
+{name: "Cardiology", last: {patient: 12, ward: "B2", hours: 1.25}, open: false}
+Patient secrets (3): ssn card.number spare
+Login secrets (2): password pin
+Account secrets (1): card.number
+Ward secrets (0):
+classified: Patient true Login true Account true Visit false Ward false
+plain Patient: false
+plain Account: false
+plain Ward: true
+Patient with last4: true
+Patient with only_strings: false
+Login with only_strings: false
+Account with only_strings: true
+Ward with only_strings: true
+Login with silent: false
+Ward with silent: true

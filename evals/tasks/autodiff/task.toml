@@ -1,0 +1,6 @@
+title = "Symbolic derivatives of a formula string, with a generated argument struct"
+needs = ["substitute", "template_of", "template_arguments_of", "reflect_constant", "extract", "define_aggregate", "data_member_spec", "nonstatic_data_members_of", "access_context", "identifier_of", "define_static_string", "define_static_array", "info template parameter", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

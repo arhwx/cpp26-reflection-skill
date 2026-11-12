@@ -1,0 +1,6 @@
+title = "Vertex attribute table with component count and type from arrays, std::array and vector structs"
+needs = ["nonstatic_data_members_of", "access_context", "identifier_of", "offset_of", "type_of", "size_of", "dealias", "remove_cv", "is_array_type", "rank", "extent", "remove_extent", "template_of", "template_arguments_of", "extract", "annotations", "annotations_of", "remove_const", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

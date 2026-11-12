@@ -1,0 +1,45 @@
+messages: 6
+has deposit: true
+has report: true
+has total: false
+has make: false
+has each: false
+has audit: false
+has owner: false
+memo is std::string: true
+amount is int: true
+freeze is empty: true
+rename index: 2
+report index: 5
+send deposit(amount=100, memo="salary")
+send set_rate(percent=2.5, compound=true)
+send withdraw(amount=30)
+send rename(name="ada lovelace")
+send withdraw(amount=100)
+send withdraw(amount=5)
+pending: 6, balance still 0
+step
+  deposit 100 (salary), balance 100
+stepped: true
+pending: 5
+run
+  rate 2.5 compound
+  withdraw 30, balance 70
+  rename ada -> ada lovelace
+  withdraw 100, balance -30
+  overdraft at -30, queue freeze
+send freeze()
+send report()
+  withdraw 5, balance -35
+  overdraft at -35
+  frozen
+  report: ada lovelace has -35 (frozen)
+processed: 7, pending: 0
+step on empty: false
+send withdraw(amount=10)
+send deposit(amount=50, memo="refund")
+run again
+  withdraw 10 refused, frozen
+  deposit 50 (refund), balance 15
+processed: 2
+final: ada lovelace 15 2.5 true

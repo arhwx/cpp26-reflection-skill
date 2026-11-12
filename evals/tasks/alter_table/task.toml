@@ -1,0 +1,6 @@
+title = "ALTER TABLE statements from two versions of a struct"
+needs = ["nonstatic_data_members_of", "access_context", "annotations_of", "extract", "define_static_string", "identifier_of", "type_of", "dealias", "template_of", "template_arguments_of", "size_of", "parent_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

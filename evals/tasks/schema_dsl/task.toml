@@ -1,0 +1,6 @@
+title = "Nested struct types from a schema string, with a value printer and parse errors"
+needs = ["define_aggregate", "data_member_spec", "consteval block", "substitute", "dealias", "reflect_constant", "define_static_string", "nonstatic_data_members_of", "access_context", "identifier_of", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

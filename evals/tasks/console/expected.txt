@@ -1,0 +1,62 @@
+[volume] [volume = 7]
+[volume 9] [volume = 9]
+[volume loud] [error: bad value 'loud' for volume]
+[volume 1 2] [error: volume takes one value]
+[max_volume] [max_volume = 11]
+[max_volume 3] [error: max_volume is read-only]
+[gravity 1.5] [gravity = 1.5]
+[weight 2] [3]
+[god_mode true] [god_mode = true]
+[god_mode yes] [error: bad value 'yes' for god_mode]
+[player] [player = "ann"]
+[player "ada lovelace"] [player = "ada lovelace"]
+[mode] [mode = windowed]
+[mode fullscreen] [mode = fullscreen]
+[mode tiny] [error: bad value 'tiny' for mode]
+[next_mode borderless] [windowed]
+[add 2 3] [5]
+[  add   -4    1  ] [-3]
+[add 2] [error: add does not take 1 arguments]
+[add 2 x] [error: bad argument 'x' for b]
+[add x y] [error: bad argument 'x' for a]
+[greet bo] ["hello bo"]
+[greet "big bo"] ["hello big bo"]
+[greet ""] ["hello "]
+[greet "oops] [error: unterminated quote]
+[spawn orc 3] [ok]
+[spawn "cave troll" 1] [ok]
+[spawn orc] [error: spawn does not take 1 arguments]
+[move 2] ["at 2,0"]
+[move 1 5] ["at 3,5"]
+[move] [error: move does not take 0 arguments]
+[louder 1] [true]
+[louder 5] [false]
+[reset] [ok]
+[volume] [volume = 7]
+[twice 2] [error: unknown command 'twice']
+[_pos] [error: unknown command '_pos']
+[_where] [error: unknown command '_where']
+[detail] [error: unknown command 'detail']
+[depth] [error: unknown command 'depth']
+[Mode] [error: unknown command 'Mode']
+[help] [error: unknown command 'help']
+[] []
+log:
+  orc x3
+  cave troll x1
+help:
+add(int a, int b) -> int
+god_mode: bool = false
+gravity: double = 1.5
+greet(string name) -> string
+louder(int by) -> bool
+max_volume: int = 11 (read-only)
+mode: Mode = fullscreen
+move(int dx) -> string
+move(int dx, int dy) -> string
+next_mode(Mode m) -> Mode
+player: string = "ada lovelace"
+reset() -> void
+spawn(string what, int count) -> void
+volume: int = 7
+weight(double mass) -> double

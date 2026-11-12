@@ -1,0 +1,19 @@
+Vertex (stride 48)
+  position  location 0 offset  0 3xf32
+  uv        location 1 offset 12 2xf32
+  color     location 2 offset 20 4xu8 normalized
+  bones     location 6 offset 28 2xi16
+  weight    location 7 offset 32 1xu16 normalized
+  time      location 8 offset 40 1xf64
+Particle (stride 88)
+  origin    location 3 offset  0 3xf32
+  seed      location 4 offset 12 1xi32
+  tint      location 1 offset 80 1xu32
+  spin      location 2 offset 84 1xi8
+Vertex: ok
+Matrix: Matrix.m: 16 components, need 1 to 4
+Flag: Flag.on: unsupported type
+Padded: Padded.position: unsupported type
+Mixed: Mixed.pair: unsupported type
+Wide: Wide.id: unsupported type
+Clash: Clash.d: location 2 already used

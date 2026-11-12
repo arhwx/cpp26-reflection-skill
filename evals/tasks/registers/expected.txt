@@ -1,0 +1,38 @@
+ctrl raw 0x01003885 baud 904
+all ones: EN=1 PARITY=3 BAUD=4095 IRQ=1 raw 0x0100fff7
+status RXNE=0 TXE=1 ERR=5 raw 0x502
+word 0xdeadbeef
+IRQ[24] BAUD[15:4] PARITY[2:1] EN[0]
+ERR[10:8] TXE[1] RXNE[0]
+HI[31:16] LO[15:0]
+check: ok
+check: ok
+check: duplicate field 'EN'
+check: layout has 33 bits, more than 32
+check: width of 'EN' must be 1 to 32
+check: width of 'EN' must be 1 to 32
+check: bad field 'EN=1'
+check: bad field '1X:1'
+check: bad field 'B:'
+irq 0
+  reset
+irq 1
+  unhandled
+irq 2
+  timer tick 1
+irq 3
+  unhandled
+irq 4
+  unhandled
+irq 5
+  uart0
+  timer tick 2
+irq isr: ok
+irq isr in 4 slots: irq 5 of uart0 is out of range
+irq clash: irq 3 used by dma and uart
+irq far: irq -1 of nmi is out of range
+irq far in 8 slots: irq 12 of dog is out of range
+pins: A0=button A5=spi.sck A6=spi.miso A7=spi.mosi B6=uart.tx B7=uart.rx B10=debug C13=led
+board: ok
+crowded: pin B7 used by console.rx and led
+twice: pin B6 used by a.tx and b.tx

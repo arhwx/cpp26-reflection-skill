@@ -1,0 +1,6 @@
+title = "Swift-style key paths: dotted and indexed member paths with get, set, functional update and checked errors"
+needs = ["nonstatic_data_members_of", "access_context", "identifier_of", "type_of", "dealias", "is_array_type", "extent", "remove_extent", "template_of", "template_arguments_of", "extract", "define_static_string", "define_static_array", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

@@ -1,0 +1,36 @@
+Program = { Let } Expr ;
+Let = "let" identifier "=" Expr ";" ;
+Expr = Term { AddOp } ;
+Term = Factor { MulOp } ;
+AddOp = ( "+" | "-" ) Term ;
+Factor = [ "-" ] ( Num | Call | Var | Group ) ;
+MulOp = ( "*" | "/" ) Factor ;
+Num = integer ;
+Call = identifier "(" Expr ")" ;
+Var = identifier ;
+Group = "(" Expr ")" ;
+--
+Value = ( "true" | "false" | integer | List ) ;
+List = "[" [ Items ] "]" ;
+Items = Value { More } ;
+More = "," Value ;
+--
+let x = 2 * ( 3 + 4 ) ; let y = sq ( x ) - - 1 ; y / 3 + x => 79
+abs ( - 5 ) * 2 => 10
+7 => 7
+no parse: "1 +"
+no parse: "let = 3; 1"
+no parse: "2 * (3"
+no parse: "f(x"
+let a = 1 ; let b = a + a ; b * b - a => 3
+letter + 1 => 1
+let x = 4 ; x => 4
+expr: ( 1 ) = 1
+factor: - n
+[ 1 , [ true , false ] , [ ] , 7 ] sum 8
+[ ] sum 0
+42 sum 42
+no parse: [1,]
+no parse: [true false]
+no parse: truefalse
+[ [ [ 3 ] ] , 4 ] sum 7

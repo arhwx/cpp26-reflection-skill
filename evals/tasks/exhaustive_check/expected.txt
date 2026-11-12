@@ -1,0 +1,24 @@
+Crossing{north: red, east: red, car_waiting: false, timer: 0}
+Crossing{north: red, east: red, car_waiting: false, timer: 1}
+Crossing{north: red, east: red, car_waiting: false, timer: 2}
+Crossing{north: red, east: red, car_waiting: true, timer: 0}
+54 crossings
+a safe crossing stays safe: holds in all 54 cases
+the timer stays within 0 to 2: holds in all 54 cases
+a hasty crossing stays safe: broken by case 40, Crossing{north: green, east: red, car_waiting: true, timer: 0}
+72 hands, 6 cards, 2 suits, 2 bools
+Card{suit: clubs, rank: 1}, Card{suit: clubs, rank: 2}, Card{suit: clubs, rank: 3}, Card{suit: hearts, rank: 1}, Card{suit: hearts, rank: 2}, Card{suit: hearts, rank: 3}
+Hand{first: Card{suit: hearts, rank: 3}, second: Card{suit: hearts, rank: 3}, sorted: false}
+Hand{first: Card{suit: hearts, rank: 3}, second: Card{suit: hearts, rank: 3}, sorted: true}
+a hand holds two different cards: broken by case 1, Hand{first: Card{suit: clubs, rank: 1}, second: Card{suit: clubs, rank: 1}, sorted: false}
+ranks add up to at most 5: broken by case 29, Hand{first: Card{suit: clubs, rank: 3}, second: Card{suit: clubs, rank: 3}, sorted: false}
+a sorted hand of one suit is ordered: broken by case 14, Hand{first: Card{suit: clubs, rank: 2}, second: Card{suit: clubs, rank: 1}, sorted: true}
+ranks stay within 1 to 3: holds in all 72 cases
+27 moves
+Move{dx: 1, dy: 1, steps: 0}
+Move{dx: 1, dy: 1, steps: 1}
+Move{dx: 1, dy: 1, steps: 2}
+a move goes somewhere: broken by case 14, Move{dx: 0, dy: 0, steps: 1}
+a move has at most 2 steps: holds in all 27 cases
+a light is never yellow: broken by case 2, yellow
+every bool is true: broken by case 1, false

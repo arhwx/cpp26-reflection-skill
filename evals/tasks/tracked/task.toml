@@ -1,0 +1,6 @@
+title = "Change tracking wrapper with generated dirty flags and setters by name"
+needs = ["define_aggregate", "data_member_spec", "consteval block", "annotations_of", "nonstatic_data_members_of", "access_context", "identifier_of", "type_of", "define_static_array", "template for", "type splice", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

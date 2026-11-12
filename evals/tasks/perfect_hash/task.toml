@@ -1,0 +1,6 @@
+title = "Compile-time perfect hash from names to enumerators and data members"
+needs = ["enumerators_of", "nonstatic_data_members_of", "access_context", "identifier_of", "is_enum_type", "extract", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

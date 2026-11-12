@@ -1,0 +1,6 @@
+title = "Typed constant table from CSV text"
+needs = ["define_aggregate", "data_member_spec", "consteval block", "nonstatic_data_members_of", "access_context", "type_of", "identifier_of", "define_static_string", "define_static_array", "template for", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

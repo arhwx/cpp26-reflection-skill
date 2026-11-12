@@ -1,0 +1,6 @@
+title = "C function-pointer table and C header generated from a C++ class for a plugin ABI"
+needs = ["members_of", "access_context", "is_function", "is_static_member", "is_constructor", "is_destructor", "is_operator_function", "is_const", "return_type_of", "parameters_of", "has_identifier", "identifier_of", "type_of", "dealias", "is_default_constructible_type", "substitute", "reflect_constant", "define_aggregate", "data_member_spec", "consteval block", "define_static_array", "define_static_string", "splice"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

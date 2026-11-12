@@ -1,0 +1,36 @@
+start: [] / no changes
+  changed: price
+set price 25: true
+set price 25 again: false
+  changed: name
+set name: true
+set views: true
+set stock 5: false
+notified: 2
+changed: [name price]
+flags: name=true price=true stock=false tags=false
+dirty().price = true, is_dirty<stock> = false
+summary: name: lamp -> desk lamp, price: 20 -> 25
+price 25 views 100 name desk lamp
+after revert: lamp 20 [] views 100
+summary: no changes
+  changed: tags
+  changed: price
+summary: price: 20 -> 18, tags: ["home"] -> ["home", "sale"]
+after commit: no changes / price 18
+  changed: price
+  changed: price
+set back: price: 18 -> 18
+after revert: price 18 tags ["home", "sale"]
+notified: 6
+set hits: true
+counter: hits 3 changed [] summary no changes
+flags aggregate: true, empty for Counter: true
+flag types: true true
+same flags type: true
+set<pricee>(1): false
+set<price>("cheap"): false
+set<price>(2.5): true
+set<name>(42): false
+is_dirty<views>: false
+is_dirty<stock>: true

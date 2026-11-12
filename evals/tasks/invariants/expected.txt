@@ -1,0 +1,32 @@
+Range: ok
+Account: ok
+Point: ok
+Typo: unknown name 'lo' in 'lo <= hi'
+Chain: cannot parse 'a < b <= c'
+Open: cannot parse '(a + b > c'
+Assign: cannot parse 'a = 1 || zz > 0'
+Unknown: unknown name 'zz' in 'zz > 0 || a = 1'
+Dot: cannot parse 'a > 1.'
+Secret: unknown name 'x' in 'x < y'
+set low: true, set lo: false, write through ->: false
+high = 20: ok
+low = 25: Range: 'low <= high' is broken (low = 25, high = 20)
+step = 0: Range: 'step > 0 && step <= high - low' is broken (step = 0, high = 20, low = 0)
+  range 0 20 2
+move to 30..40: ok
+low 35, step 10: Range: 'step > 0 && step <= high - low' is broken (step = 10, high = 40, low = 35)
+  range 30 40 2
+construct 3..1: Range: 'low <= high' is broken (low = 3, high = 1)
+  broken: 2 [low <= high] [step > 0 && step <= high - low]
+  broken: 0
+close: Account: '!closed || balance == 0' is broken (closed = true, balance = -10.5)
+balance -16: Account: 'balance >= -(limit * 1.5)' is broken (balance = -16, limit = 10)
+limit 20: ok
+balance -16 again: ok
+  account closed=false balance=-16 limit=20
+settle and close: ok
+overdraw closed: Account: '!closed || balance == 0' is broken (closed = true, balance = -0.25)
+  account closed=true balance=0 limit=20
+  broken: 2 [!closed || balance == 0] [balance >= -(limit * 1.5)]
+point x = -5: ok
+  point -5 2

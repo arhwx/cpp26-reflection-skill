@@ -1,0 +1,6 @@
+title = "TypeScript declarations from a walk of the C++ type graph, dependencies first"
+needs = ["nonstatic_data_members_of", "bases_of", "access_context", "enumerators_of", "identifier_of", "type_of", "dealias", "remove_cv", "has_template_arguments", "template_of", "template_arguments_of", "is_enum_type", "is_class_type", "is_arithmetic_type", "is_integral_type", "size_of", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

@@ -1,0 +1,33 @@
+bump: 42
+get calls: 1, put calls: 1
+put got hits = 42
+unset size: 0, unset describe: ''
+erase: true false after 2 calls, last key keep
+get through const: 5
+get calls: 2
+mock clock reached 1600 after 2 sleeps
+--- logged
+[log] get(key="hits") -> 0
+[log] put(key="hits", value=1)
+[log] get(key="hits") -> 1
+[log] put(key="hits", value=2)
+[log] put(key="ratio", value=3)
+[log] erase(key="ratio") -> true
+[log] erase(key="missing") -> false
+[log] size() -> 1
+[log] describe() -> "1 keys"
+real store has 1 keys, hits = 2
+[log] now() -> 1000
+  (sleeping 250 ms)
+[log] sleep(arg0=250, reason="poll")
+[log] now() -> 1250
+  (sleeping 250 ms)
+[log] sleep(arg0=250, reason="poll")
+[log] now() -> 1500
+[log] now() -> 1500
+reached 1500
+--- constraints
+put takes text: false
+put takes int: true
+has rename: false
+logged put takes int: true

@@ -1,0 +1,58 @@
+syntax = "proto3";
+
+enum Role {
+  guest = 0;
+  member = 1;
+  admin = 7;
+}
+
+enum Kind {
+  home_office = 0;
+  branch = -1;
+}
+
+message Address {
+  string city = 1;
+  uint32 zip = 2;
+  Kind kind = 3;
+}
+
+message User {
+  string name = 1;
+  int32 id = 2;
+  sint64 balance = 3;
+  Role role = 4;
+  repeated int32 scores = 5;
+  repeated string tags = 6;
+  Address home = 7;
+  repeated Address offices = 8;
+  optional int32 age = 9;
+  double ratio = 15;
+  float weight = 16;
+  repeated sint32 deltas = 20;
+}
+---
+User: ok
+Dup.c: field number 1 is already used by a
+Zero.a: field number 0 is out of range
+Huge.b: field number 536870912 is out of range
+Zig.a: zigzag needs a signed integer
+Odd.c: unsupported type
+Grid.rows: unsupported type
+---
+address: 0a044f736c6f10960118ffffffffffffffffff01
+empty user: 3a00
+ada: 85 bytes
+0a0361646110feffffffffffffffff01180520072a0301ac0232017832003a070a055061726973420042130a04526f6d65100718ffffffffffffffffff01480079000000000000e03f85010000c03fa2010301027f
+decoded: name=ada id=-2 balance=-3 role=7 scores=[ 1 300 ] tags=[ x  ] home=Paris/0 offices=[ /0/0 Rome/7/-1 ] age=0 ratio=0.5 weight=1.5 deltas=[ -1 1 -64 ] cache=0
+same bytes again: true
+---
+mixed: name=bo id=0 balance=0 role=7 scores=[ 5 7 1 2 ] tags=[ ] home=Rome/42 offices=[ ] age=0 ratio=0 weight=0 deltas=[ ] cache=0
+truncated: malformed
+wrong wire type: malformed
+group: malformed
+field zero: malformed
+length past end: malformed
+long varint: malformed
+nothing: city= zip=0 kind=0
+negative kind: city= zip=0 kind=-1

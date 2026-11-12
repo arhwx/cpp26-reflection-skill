@@ -1,0 +1,6 @@
+title = "Pahole-style layout report and layout hash as an ABI guard"
+needs = ["nonstatic_data_members_of", "bases_of", "access_context", "offset_of", "size_of", "alignment_of", "bit_size_of", "is_bit_field", "identifier_of", "type_of", "is_class_type", "is_union_type", "define_static_string"]
+fork_ok = true
+fork_note = ""
+cxx20_fallback = false
+holdout = true

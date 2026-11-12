@@ -1,18 +1,17 @@
 # cpp26-reflection-skill
 
-An agent skill that teaches coding agents to write C++26 static reflection code that compiles.
+An agent skill that teaches coding agents to write C++26 static reflection code that compiles and does what was asked.
 
-C++26 adds reflection: `^^`, `[: :]` splices, `template for`, annotations and the `<meta>` library. Coding agents learned it from years of proposal papers, blog posts and experimental compilers, so they often write spellings that never made it into the standard (`^T`, `name_of`, `std::meta::expand`, member queries without an access context) or code that breaks the compile-time rules. This skill gives them the final C++26 rules, the full `<meta>` API, tested recipes and a translation table for old spellings.
+C++26 adds reflection: `^^`, `[: :]` splices, `template for`, annotations and the `<meta>` library. Agents know the syntax, but the rules are new and strict, and their mistakes are subtle: a splice used as a template argument without `typename`, a reflection reaching code that runs at run time, `define_aggregate` called outside a `consteval` block, or an annotation check that compiles and never matches. This skill gives them the final C++26 rules, the full `<meta>` API, tested recipes, and the traps that compile but misbehave.
 
 ```cpp
-// what agents tend to write
-for (auto m : std::meta::nonstatic_data_members_of(^T))
-    std::println("{}={}", std::meta::name_of(m), obj.[:m:]);
+// compiles, but never finds the annotation: the type of an annotation is const
+for (auto a : std::meta::annotations_of(m))
+    if (std::meta::type_of(a) == ^^width) ...
 
-// what compiles
-template for (constexpr auto m : std::define_static_array(
-                  std::meta::nonstatic_data_members_of(^^T, std::meta::access_context::current())))
-    std::println("{}={}", std::meta::identifier_of(m), obj.[:m:]);
+// what works
+for (auto a : std::meta::annotations_of(m))
+    if (std::meta::remove_const(std::meta::type_of(a)) == ^^width) ...
 ```
 
 ## Results

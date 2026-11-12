@@ -1,0 +1,4 @@
+interface:
+  display_name: "C++26 Reflection"
+  short_description: "Write C++26 static reflection code that compiles"
+  default_prompt: "Use C++26 reflection to print every field of this struct"

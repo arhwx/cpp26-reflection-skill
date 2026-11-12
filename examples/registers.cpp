@@ -56,6 +56,24 @@ consteval std::string_view check(std::string_view layout) {
     return e.empty() ? "ok" : std::define_static_string(e);
 }
 
+consteval std::vector<info> fields(info type) { return nonstatic_data_members_of(type, std::meta::access_context::unprivileged()); }
+consteval int low_bit(info m) { return int(offset_of(m).bytes * 8 + offset_of(m).bits); }
+
+// bit-field order is up to the platform, so compare where each named field starts with where the layout puts it
+consteval std::string_view placement(info type, std::string_view layout) {
+    std::vector<info> ms = fields(type);  // named fields only, in declaration order
+    std::size_t i = 0;
+    int at = 0;
+    for (const field& f : parse(layout).fields) {
+        if (f.name != "_") {
+            if (int real = low_bit(ms[i++]); real != at)
+                return std::define_static_string("field '" + f.name + "' is at bit " + num(real) + ", the layout puts it at bit " + num(at));
+        }
+        at += f.width;
+    }
+    return "ok";
+}
+
 template <text L>
 struct bits_of {
     static_assert(check(L.s) == "ok", check(L.s));
@@ -67,12 +85,10 @@ struct bits_of {
                                           : data_member_spec(^^unsigned, {.name = f.name, .bit_width = f.width}));
         define_aggregate(^^type, specs);
     }
+    static_assert(placement(^^type, L.s) == "ok", placement(^^type, L.s));
 };
 template <text L>
 using bits = bits_of<L>::type;
-
-consteval std::vector<info> fields(info type) { return nonstatic_data_members_of(type, std::meta::access_context::unprivileged()); }
-consteval int low_bit(info m) { return int(offset_of(m).bytes * 8 + offset_of(m).bits); }
 
 template <class R>
 constexpr std::uint32_t to_raw(const R& r) {

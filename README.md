@@ -17,17 +17,19 @@ template for (constexpr auto m : std::define_static_array(
 
 ## Results
 
-There are 23 tasks, each tried once per model. Models wrote each header in one pass and were not allowed to compile anything. A task passes when the header builds with GCC 16 and the test program prints the expected output.
+There are 32 tasks, listed in [evals/README.md](evals/README.md), each tried once per model. The last 9 are harder: generated types, constructor and parameter reflection, type substitution and format strings checked at compile time. Models wrote each header in one pass and were not allowed to compile anything. A task passes when the header builds with GCC 16 and the test program prints the expected output.
 
 | Model | Without skill | With skill |
 |---|---|---|
-| Claude Opus 5.5 | 22/23 | 23/23 |
-| Claude Fable 5.2 | 23/23 | 23/23 |
-| GPT-6.1 Sol | 17/23 | 23/23 |
-| GPT-6 Astra | 18/23 | 23/23 |
-| **Total** | **80/92 (87%)** | **92/92 (100%)** |
+| Claude Opus 5.5 | 31/32 | 32/32 |
+| Claude Fable 5.2 | 32/32 | 31/32 |
+| GPT-6.1 Sol | 20/32 | 32/32 |
+| GPT-6 Astra | 27/32 | 32/32 |
+| **Total** | **110/128 (86%)** | **127/128 (99%)** |
 
-On the 9 holdout tasks, which have no matching example in the skill, the totals are 29/36 without and 36/36 with.
+On the 16 holdout tasks, which have no matching example in the skill, the totals are 52/64 without and 63/64 with.
+
+Claude Opus 5.5 and Fable 5.2 already handle these tasks well; the skill helps most with models that do not. On the 9 harder tasks, GPT-6.1 Sol went from 3/9 to 9/9.
 
 Common failures without the skill:
 

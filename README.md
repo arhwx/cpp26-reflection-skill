@@ -42,7 +42,7 @@ Each model made one attempt per task, so a difference of one task is within nois
 
 ## Examples
 
-[examples/](examples/) has ten programs that show how far standard reflection goes. A formula string is differentiated at compile time, CSV text becomes a typed table, and struct members carry spreadsheet formulas. Go interfaces, Rust enums, Julia multimethods, pytest fixtures and Python decorators each fit in one file of under 200 lines, user code included.
+[examples/](examples/) has 29 programs that show how far standard reflection goes. Named regex groups become typed struct members, SQL text is checked against a struct and gives a typed row, unit text such as `kg*m/s^2` becomes a type, and plain structs speak the protobuf wire format and print their own TypeScript declarations. Go interfaces, Rust enums, Swift key paths, Python keyword arguments, QuickCheck and algebraic effects each fit in one file of about 200 lines, user code included.
 
 ## What it covers
 

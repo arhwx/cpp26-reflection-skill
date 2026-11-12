@@ -21,7 +21,8 @@ ROOT = Path(__file__).resolve().parent.parent
 SKILL = ROOT / "skills" / "cpp26-reflection"
 EXAMPLES = ROOT / "examples"
 
-GCC = ["g++", "-std=c++26", "-freflection", "-Wall", "-Wextra"]
+# leaving members out of a designated initializer is the point of several examples
+GCC = ["g++", "-std=c++26", "-freflection", "-Wall", "-Wextra", "-Wno-missing-field-initializers"]
 FORK_IMAGE = os.environ.get(
     "FORK_IMAGE",
     "yusufemresamur/clang-p2996@sha256:702ad6d6cf3e6d822b2ddba0cb97c529b9eccb9fe047adf0b8a455535a6a4ee7")

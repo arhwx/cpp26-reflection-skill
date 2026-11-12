@@ -41,6 +41,10 @@ Common failures without the skill:
 
 Each model made one attempt per task, so a difference of one task is within noise.
 
+## Examples
+
+[examples/](examples/) has ten programs that show how far standard reflection goes. A formula string is differentiated at compile time, CSV text becomes a typed table, and struct members carry spreadsheet formulas. Go interfaces, Rust enums, Julia multimethods, pytest fixtures and Python decorators each fit in one file of under 200 lines, user code included.
+
 ## What it covers
 
 - the core member and enumerator loop, and why each part is needed
@@ -91,7 +95,8 @@ skills/cpp26-reflection/
   references/renames.md   old spellings and their C++26 names
   references/migration.md replacing older techniques, fallbacks
 evals/                    tasks, reference solutions and the grader
-tests/check_snippets.py   compiles every code block in the skill
+examples/                 programs that show what reflection can do
+tests/check_snippets.py   compiles every code block in the skill and every example
 ```
 
 ## Evals

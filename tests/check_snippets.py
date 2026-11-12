@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
-"""Compile every ```cpp block in the skill.
+"""Compile every ```cpp block in the skill, and every program in examples/.
 
 A block containing `int main` is built and run. If a ```text block follows it
 directly, the program output must match it. Other blocks are compiled only.
+An example must print what its trailing `// output:` comment shows.
 
 usage: python3 tests/check_snippets.py [--fork] [files...]
 """
@@ -18,6 +19,7 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 SKILL = ROOT / "skills" / "cpp26-reflection"
+EXAMPLES = ROOT / "examples"
 
 GCC = ["g++", "-std=c++26", "-freflection", "-Wall", "-Wextra"]
 FORK_IMAGE = os.environ.get(
@@ -43,6 +45,19 @@ def blocks(path):
             if nxt.group(1) == "text" and between.strip() == "":
                 expected = nxt.group(2)
         yield line, m.group(2), expected
+
+
+def example(path):
+    code = path.read_text()
+    _, sep, tail = code.partition("\n// output:\n")
+    if not sep:
+        return [(1, code, None)]
+    lines = [line.removeprefix("//").removeprefix(" ") for line in tail.splitlines()]
+    return [(1, code, "\n".join(lines) + "\n")]
+
+
+def snippets(path):
+    return example(path) if path.suffix == ".cpp" else blocks(path)
 
 
 def run(cmd, cwd, timeout=120):
@@ -92,8 +107,8 @@ def main():
     ap.add_argument("--fork", action="store_true", help="also build with the clang fork")
     ap.add_argument("files", nargs="*")
     args = ap.parse_args()
-    files = [Path(f).resolve() for f in args.files] or sorted(SKILL.rglob("*.md"))
-    jobs = [(f, line, code, exp) for f in files for line, code, exp in blocks(f)]
+    files = [Path(f).resolve() for f in args.files] or [*sorted(SKILL.rglob("*.md")), *sorted(EXAMPLES.glob("*.cpp"))]
+    jobs = [(f, line, code, exp) for f in files for line, code, exp in snippets(f)]
     targets = [False, True] if args.fork else [False]
 
     def one(job):
